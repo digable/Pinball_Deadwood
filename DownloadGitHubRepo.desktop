@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=gnome-panel-launcher
+Name[en_US]=DownloadGitHubRepo
+Exec=/home/deadwood/pinball/deadwood/github.sh
+Name=DownloadGitHubRepo
+Icon=gnome-panel-launcher

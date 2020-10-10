@@ -162,8 +162,8 @@ flippers:
 
 displays:
     window:
-        width: 800
-        height: 600
+        width: 1366
+        height: 768
 slides:
     welcome_slide:
         widgets:
@@ -172,7 +172,7 @@ slides:
     attract_started:
         widgets:
               - type: video
-                video: attract_deadwood_alt
+                video: attract_deadwood
                 end_behavior: loop
 slide_player:
     init_done: welcome_slide

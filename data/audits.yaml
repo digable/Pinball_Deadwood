@@ -1,0 +1,33 @@
+events:
+  game_ended: 110
+  game_started: 148
+player:
+  score:
+    average: -24.96031746031746
+    top:
+    - 1815
+    - 295
+    - 290
+    - 255
+    - 135
+    - 125
+    - 105
+    - 100
+    - 95
+    - 80
+    total: 126
+switches:
+  s_launch_button: 30
+  s_left_flipper: 1525
+  s_left_slingshot: 431
+  s_plunger_lane: 516
+  s_right_flipper: 1264
+  s_right_inlane: 21
+  s_right_slingshot: 195
+  s_start: 37
+  s_tilt: 13
+  s_trough1: 293
+  s_trough2: 425
+  s_trough3: 346
+  s_trough4: 477
+  s_trough_jam: 304

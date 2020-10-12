@@ -3,7 +3,9 @@
 machine:
   balls_installed: 3
 
+#INFO:START only needed for virtual
 # virtual_platform_start_active_switches: s_trough1, s_trough2, s_trough3
+#INFO:STOP only needed for virtual
 
 window:
   width: 1366
@@ -21,13 +23,13 @@ displays:
         height: 768
 
 switches:
-#INFO: only needed for virtual
-  #  c_launch_button:
-  #      number: A1-B0-6
-  #      default_pulse_ms: 20
-#INFO: only needed for virtual game because no manual plunger
-  #  s_launch_button:
-  #      number: A1-B0-7
+#INFO:START only needed for virtual
+    # c_launch_button: 
+    #     number: A1-B0-6 
+    #     # default_pulse_ms: 20
+    # s_launch_button:
+    #     number: A1-B0-7
+#INFO:STOP only needed for virtual
 
     s_left_flipper:
         number: A0-B1-0
@@ -56,16 +58,18 @@ switches:
         tags: start
 
 #INFO: only there to show playfield active, once more switches are on the playfield this will not be necessary
-  #  s_right_inlane:
-  #      number: A1-B1-2
-  #      tags: playfield_active
+#INFO:START only needed for virtual
+    # s_right_inlane:
+    #     number: A1-B1-2
+    #     tags: playfield_active
+#INFO:STOP only needed for virtual
 
     s_left_slingshot:
         number: A0-B0-6
-      #  tags: playfield_active
+        # tags: playfield_active #INFO: uncomment for virtual
     s_right_slingshot:
         number: A0-B0-7
-      #  tags: playfield_active
+        # tags: playfield_active #INFO: uncomment for virtual
 
     s_tilt:
         number: A0-B1-3
@@ -136,11 +140,11 @@ flippers:
         main_coil: c_flipper_left_main
         hold_coil: c_flipper_left_hold
         activation_switch: s_left_flipper
-        # enable_events: machine_reset_phase_3
+        enable_events: machine_reset_phase_3 #INFO: uncomment for virtual
     right_flipper:
         main_coil: c_flipper_right_main
         hold_coil: c_flipper_right_hold
         activation_switch: s_right_flipper
-        # enable_events: machine_reset_phase_3
+        enable_events: machine_reset_phase_3 #INFO: uncomment for virtual
 
 

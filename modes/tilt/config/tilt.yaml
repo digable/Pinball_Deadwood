@@ -19,6 +19,7 @@ slides:
         video: tilt
         end_behavior: stop
     expire: 2s
+    
 tilt:    # the following are the defaults only copy those if you want to change them
   multiple_hit_window: 300ms
   settle_time: 5s

@@ -13,7 +13,6 @@ variable_player:
   s_right_flipper_active:
     score: -5
 
-
 slide_player:
   mode_base_started:
       widgets:

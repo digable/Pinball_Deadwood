@@ -5,14 +5,9 @@ hardware:
     driverboards: pdb
 #    platform: smart_virtual
 
-
-
 modes:
     - base
     - tilt
-
-
-
 
 switches:
     s_left_flipper:
@@ -33,11 +28,10 @@ switches:
     s_trough_jam:
         number: A0-B0-0
 
-
-#s_plunger_lane is where the ball rests in the lane
+#INFO: switch to detect the ball resting in the lane
     s_plunger_lane:
         number: A0-B0-5
-#s_launch_button only needed for virtual game because no manual plunger
+#INFO: only needed for virtual game because no manual plunger
 #    s_launch_button:
 #        number: A1-B0-7
 
@@ -45,7 +39,7 @@ switches:
         number: A0-B1-1
         tags: start
 
-#s_right_inlane is only there to show playfield active, once more switches are on the playfield this will not be necessary
+#INFO: only there to show playfield active, once more switches are on the playfield this will not be necessary
 #    s_right_inlane:
 #        number: A1-B1-2
 #        tags: playfield_active
@@ -91,10 +85,10 @@ coils:
         number: A0-B1-0
         default_pulse_ms: 10
 
-#only needed for virtual
-#    c_launch_button:
-#        number: A1-B0-6
-#        default_pulse_ms: 20
+#INFO: only needed for virtual
+    c_launch_button:
+        number: A1-B0-6
+        default_pulse_ms: 20
 
 
 autofire_coils:
@@ -170,7 +164,7 @@ window:
   height: 768
   title: Deadwood
   resizable: false
-  fullscreen: true
+  fullscreen: false
   borderless: true
   exit_on_escape: true
   source_display: window
@@ -188,10 +182,6 @@ slides:
 slide_player:
     init_done: welcome_slide
     mode_attract_started: attract_started
-
-
-
-
 
 keyboard:
     z:

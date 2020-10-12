@@ -2,6 +2,12 @@
 
 virtual_platform_start_active_switches: s_trough1, s_trough2, s_trough3
 
+window:
+  fullscreen: false
+
+keyboard:
+    debug: true
+
 switches:
     c_launch_button: 
         number: A1-B0-6 
@@ -10,11 +16,9 @@ switches:
         number: A1-B0-7
 
 #INFO: only there to show playfield active, once more switches are on the playfield this will not be necessary
-#INFO:START only needed for virtual
     s_right_inlane:
         number: A1-B1-2
         tags: playfield_active
-#INFO:STOP only needed for virtual
 
 #     s_left_slingshot:
 #         number: A0-B0-6

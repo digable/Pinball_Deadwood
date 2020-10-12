@@ -12,7 +12,7 @@ window:
   height: 768
   title: Deadwood
   resizable: false
-  fullscreen: false
+  fullscreen: true
   borderless: true
   exit_on_escape: true
   source_display: window

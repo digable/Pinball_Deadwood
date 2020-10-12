@@ -55,7 +55,6 @@ switches:
         number: A0-B1-3
         tags: tilt_warning
 
-        
 coils:    
     c_flipper_left_main:
         number: A0-B1-2
@@ -90,7 +89,6 @@ coils:
         number: A1-B0-6
         default_pulse_ms: 20
 
-
 autofire_coils:
     left_slingshot:
         coil: c_left_slingshot
@@ -109,34 +107,21 @@ ball_devices:
         eject_targets: bd_plunger
         debug: yes
 
-
     bd_plunger:
         ball_switches: s_plunger_lane
         eject_coil: c_plunger
         mechanical_eject: true
         eject_timeouts: 1s
 
-
-
-
-
 playfields:
     playfield:
         tags: default
         default_source_device: bd_plunger
 
-
-
-
-
 #virtual_platform_start_active_switches:
 #    - s_trough1
 #    - s_trough2
 #    - s_trough3
-
-
-
-
 
 flippers:
     left_flipper:
@@ -149,10 +134,6 @@ flippers:
         hold_coil: c_flipper_right_hold
         activation_switch: s_right_flipper
        # enable_events: machine_reset_phase_3
-
-
-
-
 
 displays:
     window:

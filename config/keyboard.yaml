@@ -8,8 +8,6 @@ keyboard:
     s:
         switch: s_start
 
-
-
     q:
         switch: s_right_inlane
     p:
@@ -26,13 +24,10 @@ keyboard:
     5:
         switch: s_trough_jam
 
-
-
     9:
         switch: s_left_slingshot
     0:
         switch: s_right_slingshot
-
 
     l:
         switch: s_launch_button

@@ -6,7 +6,7 @@ window:
   fullscreen: false
 
 keyboard:
-    debug: true
+    # debug: true
 
 switches:
     c_launch_button: 

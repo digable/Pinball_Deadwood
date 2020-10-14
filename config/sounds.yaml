@@ -15,13 +15,29 @@ sound_system:
           type: standard
           simultaneous_sounds: 1
        sfx:
-          volume: 0.3
+          volume: 0.5
           type: standard
           simultaneous_sounds: 8
 
 sound_player:
     s_spinner_active:
-        sfx_fan:
+        sfx_hiccuping:
+            action: play
+            loops: 0
+    s_jukebox_target_active:
+        sfx_coin:
+            action: play
+            loops: 0
+    tilt_warning_1:
+        sfx_tilt_warning1:
+            action: play
+            loops: 0
+    tilt_warning_2:
+        sfx_tilt_warning2:
+            action: play
+            loops: 0
+    tilt:
+        voice_laugh:
             action: play
             loops: 0
 
@@ -73,6 +89,10 @@ sounds:
             attenuation: -18db
             release_point: 0.5s
             release: 2s
+    sfx_hiccuping:
+        file: hiccuping.ogg
+        volume: 0.75
+        track: sfx
     sfx_coin:
         file: coin_drop.ogg
         volume: 0.75

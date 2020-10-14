@@ -59,6 +59,8 @@ switches:
 
     s_spinner:
         number: A0-B1-7
+    s_jukebox_target:
+        number: A0-B1-6
 
     s_tilt:
         number: A0-B1-3

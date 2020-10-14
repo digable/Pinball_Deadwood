@@ -1,0 +1,110 @@
+#config_version=5
+
+sound_system:
+    master_volume: 0.9
+    tracks:
+       music:
+          volume: 0.5
+          type: standard
+          simultaneous_sounds: 1
+          events_when_stopped: music_track_stopped
+          events_when_played: music_track_played, keep_going
+          events_when_paused: music_track_paused
+       voice:
+          volume: 0.7
+          type: standard
+          simultaneous_sounds: 1
+       sfx:
+          volume: 0.4
+          type: standard
+          simultaneous_sounds: 8
+
+sound_player:
+    mode_attract_started:
+        song_attract:
+            action: play
+            loops: -1
+    mode_attract_stopped:
+        song_attract:
+            action: stop
+    mode_base_started:
+        song_02:
+            action: play
+            loops: -1
+    mode_base_stopped:
+        song_02:
+            action: stop
+
+sounds:
+    song_attract:
+        file: shrunk.ogg
+        volume: 1.0
+        track: music
+        priority: 100
+        about_to_finish_time: 2s
+        events_when_about_to_finish: song_01_about_to_finish
+    song_01:
+        file: none_shall_pass.ogg
+        volume: 1.0
+        track: music
+        priority: 100
+        about_to_finish_time: 2s
+        events_when_about_to_finish: song_02_about_to_finish
+    song_02:
+        file: kirby.ogg
+        volume: 1.0
+        track: music
+        priority: 100
+        about_to_finish_time: 2s
+        events_when_about_to_finish: song_03_about_to_finish
+    sfx_01:
+        file: fan.ogg
+        volume: 0.75
+        track: sfx
+        # priority: 100
+        # about_to_finish_time: 2s
+        # events_when_about_to_finish: sfx_01_about_to_finish
+    sfx_02:
+        file: coin_drop.ogg
+        volume: 0.75
+        track: sfx
+        # priority: 100
+        # about_to_finish_time: 2s
+        # events_when_about_to_finish: sfx_02_about_to_finish
+
+track_player:
+    stop_all_tracks:
+        __all__:
+            action: stop
+            fade: 1.5 sec
+    stop_music_track:
+        music:
+            action: stop
+            fade: 1.5 sec
+    play_music_track:
+        music:
+            action: play
+            fade: 1.5 sec
+    pause_music_track:
+        music:
+             action: pause
+    resume_music_track:
+        music:
+             action: play
+    set_music_track_volume_loud:
+        music:
+             action: set_volume
+             volume: 0.95
+             fade: 0.5 sec
+    set_music_track_volume_quiet:
+        music:
+             action: set_volume
+             volume: 0.3
+             fade: 0.5 sec
+    stop_all_sounds_on_music_track:
+        music:
+             action: stop_all_sounds
+             fade: 0.5 sec
+    stop_all_sounds:
+        __all__:
+             action: stop_all_sounds

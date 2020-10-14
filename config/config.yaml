@@ -8,7 +8,10 @@ hardware:
 config:
 - hardware.yaml
 - hardware_virtual.yaml #uncomment for virtual
+- assets.yaml
+- sounds.yaml
 - shots.yaml
+
 - keyboard.yaml
 
 modes:

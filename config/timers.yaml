@@ -1,0 +1,15 @@
+#config_version=5
+
+# timers:
+#   flipper_hold_timer:
+#     start_value: 3
+#     end_value: 0
+#     direction: down
+#     tick_interval: 1s
+#     control_events:
+#       - action: start
+#       # - action: add
+#       #   event: so_something_here
+#       #   value: 5
+#       - action: stop
+# # TODO: need to add something for a skill shot

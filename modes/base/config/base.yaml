@@ -17,7 +17,7 @@ variable_player:
   s_spinner_active:
     spinner_rotations: 1
     score: 5
-  s_jukebox_target:
+  s_jukebox_target_active:
     score: 5
 
 slide_player:

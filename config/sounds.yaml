@@ -1,7 +1,7 @@
 #config_version=5
 
 sound_system:
-    master_volume: 0.9
+    master_volume: 0.75
     tracks:
        music:
           volume: 0.5
@@ -15,11 +15,16 @@ sound_system:
           type: standard
           simultaneous_sounds: 1
        sfx:
-          volume: 0.4
+          volume: 0.3
           type: standard
           simultaneous_sounds: 8
 
 sound_player:
+    s_spinner_active:
+        sfx_fan:
+            action: play
+            loops: 0
+
     mode_attract_started:
         song_attract:
             action: play
@@ -28,11 +33,11 @@ sound_player:
         song_attract:
             action: stop
     mode_base_started:
-        song_02:
+        song_01:
             action: play
             loops: -1
     mode_base_stopped:
-        song_02:
+        song_01:
             action: stop
 
 sounds:
@@ -42,35 +47,41 @@ sounds:
         track: music
         priority: 100
         about_to_finish_time: 2s
-        events_when_about_to_finish: song_01_about_to_finish
+        events_when_about_to_finish: song_attract_about_to_finish
     song_01:
         file: none_shall_pass.ogg
         volume: 1.0
         track: music
         priority: 100
         about_to_finish_time: 2s
-        events_when_about_to_finish: song_02_about_to_finish
+        events_when_about_to_finish: song_01_about_to_finish
     song_02:
         file: kirby.ogg
         volume: 1.0
         track: music
         priority: 100
         about_to_finish_time: 2s
-        events_when_about_to_finish: song_03_about_to_finish
-    sfx_01:
+        events_when_about_to_finish: song_02_about_to_finish
+    sfx_fan:
         file: fan.ogg
         volume: 0.75
         track: sfx
-        # priority: 100
-        # about_to_finish_time: 2s
-        # events_when_about_to_finish: sfx_01_about_to_finish
-    sfx_02:
+    sfx_coin:
         file: coin_drop.ogg
         volume: 0.75
         track: sfx
-        # priority: 100
-        # about_to_finish_time: 2s
-        # events_when_about_to_finish: sfx_02_about_to_finish
+    sfx_tilt_warning1:
+        file: warning1.ogg
+        volume: 0.75
+        track: sfx
+    sfx_tilt_warning2:
+        file: warning2.ogg
+        volume: 0.75
+        track: sfx
+    sfx_bar_noise:
+        file: bar_noise.ogg
+        volume: 0.75
+        track: sfx
 
 track_player:
     stop_all_tracks:

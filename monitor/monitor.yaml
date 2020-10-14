@@ -1,26 +1,23 @@
-combo_switch:
-  both_flippers:
-    x: 0.34121621621621623
-    y: 0.3327702702702703
+autofire:
+  left_slingshot:
+    x: 0.2417027417027417
+    y: 0.6717171717171717
+    device_size: 0.02
+  right_slingshot:
+    x: 0.6709956709956709
+    y: 0.6632996632996633
+    device_size: 0.02
+ball_device:
+  bd_trough:
+    x: 0.5555555555555555
+    y: 0.8821548821548821
+    device_size: 0.02
 flipper:
   left_flipper:
-    x: 0.23310810810810811
-    y: 0.8091216216216216
+    x: 0.30663780663780665
+    y: 0.7811447811447811
+    device_size: 0.02
   right_flipper:
-    x: 0.7162162162162163
-    y: 0.8091216216216216
-playfield:
-  playfield:
-    x: 0.49324324324324326
-    y: 0.26351351351351354
-switch:
-  s_left_flipper:
-    x: 0.3648648648648649
-    y: 0.8412162162162163
-  s_right_flipper:
-    x: 0.5878378378378378
-    y: 0.8395270270270271
-timed_switch:
-  flipper_cradle:
-    x: 0.45270270270270274
-    y: 0.5050675675675675
+    x: 0.5952380952380951
+    y: 0.7861952861952862
+    device_size: 0.02

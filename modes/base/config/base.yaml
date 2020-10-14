@@ -8,10 +8,15 @@ variable_player:
     score: 20
   s_right_slingshot_active:
     score: 20
+
   s_left_flipper_active:
     score: -5
   s_right_flipper_active:
     score: -5
+
+  s_spinner_active:
+    spinner_rotations: 1
+    score: 5
 
 slide_player:
   mode_base_started:

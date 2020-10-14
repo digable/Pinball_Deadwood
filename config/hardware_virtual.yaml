@@ -4,6 +4,8 @@ virtual_platform_start_active_switches: s_trough1, s_trough2, s_trough3
 
 window:
   fullscreen: false
+  resizable: true
+  borderless: false
 
 keyboard:
     # debug: true

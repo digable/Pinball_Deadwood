@@ -24,6 +24,9 @@ keyboard:
     5:
         switch: s_trough_jam
 
+    8:
+        switch: s_spinner
+
     9:
         switch: s_left_slingshot
     0:

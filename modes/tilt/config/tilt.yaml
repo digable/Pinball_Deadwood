@@ -17,7 +17,7 @@ slides:
   tilt:
     widgets:
       - type: video
-        video: tilt
+        video: Tilt
         end_behavior: stop
     expire: 2s
 

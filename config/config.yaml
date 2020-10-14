@@ -18,6 +18,7 @@ config:
 modes:
 - base
 - tilt
+- skillshot
 
 #INFO: bootup and start modes
 slides:

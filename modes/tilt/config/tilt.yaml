@@ -13,16 +13,16 @@ slides:
       - type: video
         video: Warning-2
         end_behavior: stop
-    expire: 2s
+    expire: 1500ms
   tilt:
     widgets:
       - type: video
         video: Tilt
         end_behavior: stop
-    expire: 2s
+    expire: 7s
 
 tilt:
   #INFO: the following are the defaults only copy those if you want to change them
-  multiple_hit_window: 300ms
-  settle_time: 5s
+  multiple_hit_window: 2s
+  settle_time: 7s
   warnings_to_tilt: 3

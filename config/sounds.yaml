@@ -1,6 +1,9 @@
 #config_version=5
 
 sound_system:
+    # buffer: 2048
+    # frequency: 44100
+    # channels: 2
     master_volume: 0.75
     tracks:
        music:

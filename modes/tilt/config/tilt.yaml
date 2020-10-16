@@ -21,6 +21,20 @@ slides:
         end_behavior: stop
     expire: 7s
 
+sound_player:
+  tilt_warning_1:
+      sfx_tilt_warning1:
+          action: play
+          loops: 0
+  tilt_warning_2:
+      sfx_tilt_warning2:
+          action: play
+          loops: 0
+  tilt:
+      voice_laugh:
+          action: play
+          loops: 0
+
 tilt:
   #INFO: the following are the defaults only copy those if you want to change them
   multiple_hit_window: 2s

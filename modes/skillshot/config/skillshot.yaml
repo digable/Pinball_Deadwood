@@ -5,6 +5,7 @@ mode:
     stop_events:
         - skill_success
         - skill_failed
+        - ball_drain
     priority: 500
 
 shots:
@@ -48,6 +49,12 @@ shot_profiles:
 variable_player:
   skill_success:
     score: 37
+
+sound_player:
+  skill_success:
+      voice_skill:
+          action: play
+          loops: 0
 
 slides:
   _overwrite: true

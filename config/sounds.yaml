@@ -31,23 +31,6 @@ sound_player:
         sfx_coin:
             action: play
             loops: 0
-    tilt_warning_1:
-        sfx_tilt_warning1:
-            action: play
-            loops: 0
-    tilt_warning_2:
-        sfx_tilt_warning2:
-            action: play
-            loops: 0
-    tilt:
-        voice_laugh:
-            action: play
-            loops: 0
-    skill_success:
-        voice_skill:
-            action: play
-            loops: 0
-
     mode_attract_started:
         song_attract:
             action: play

@@ -12,13 +12,3 @@
 #       #   event: so_something_here
 #       #   value: 5
 #       - action: stop
-
-  # skillshot_timer:
-  #     start_value: 5
-  #     end_value: 0
-  #     direction: down
-  #     tick_interval: 1s
-  #     control_events:
-  #         - action: start
-  #           event: mode_skillshot_started
-      

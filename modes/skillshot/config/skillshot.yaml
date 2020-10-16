@@ -10,9 +10,9 @@ mode:
 
 shots:
     skill_1:
-        switch: s_spinner
+        switch: s_target_jukebox
         profile: skill_shot_profile
-        advance_events: mode_skillshot_started    # replace "skill_shot" with your mode name
+        advance_events: mode_skillshot_started
         # show_tokens:
         #     light: l_lane_l
     # skill_2:
@@ -66,30 +66,30 @@ slides:
     expire: 2s
 
 # slide_player:
-#   skill_success:  skill_success_slide
+  # skill_success:  skill_success_slide
 
 timers:
   skill_shot_timeout:
     start_value: 0
-    end_value: 5     # set the timeout of your skill shot here
+    end_value: 5 #INFO: timeout of skillshot
     direction: up
     tick_interval: 1s
     start_running: no
     control_events:
       - action: start
-        event: balldevice_bd_plunger_ball_eject_success  # replace "plunger_lane" with the name of your plunger device
+        event: balldevice_bd_plunger_ball_eject_success #INFO: plunger device
 
 state_machines:
    skill_shot_success:
         debug: True
         states:
             start:
-                label: Skill shot ready
+                label: Skillshot ready
             success:
-                label: Skill successful
+                label: Skillshot success
                 events_when_started: skill_success
             failed:
-                label: Skill failed
+                label: Skillshot fail
                 events_when_started: skill_failed
         transitions:
             - source: start

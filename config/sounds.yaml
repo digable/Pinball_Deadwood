@@ -27,7 +27,7 @@ sound_player:
         sfx_hiccuping:
             action: play
             loops: 0
-    s_jukebox_target_active:
+    s_target_jukebox_active:
         sfx_coin:
             action: play
             loops: 0
@@ -41,6 +41,10 @@ sound_player:
             loops: 0
     tilt:
         voice_laugh:
+            action: play
+            loops: 0
+    skill_success:
+        voice_skill:
             action: play
             loops: 0
 
@@ -115,6 +119,14 @@ sounds:
     voice_laugh:
         file: tilt_laugh.ogg
         volume: 0.75
+        track: voice
+    voice_ball_drain:
+        file: ball_drain.ogg
+        volume: 0.75
+        track: voice
+    voice_skill:
+        file: skill.ogg
+        vloume: 0.75
         track: voice
 
 track_player:

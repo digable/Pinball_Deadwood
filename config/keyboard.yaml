@@ -25,7 +25,7 @@ keyboard:
         switch: s_trough_jam
 
     7:
-        switch: s_jukebox_target
+        switch: s_target_jukebox
     8:
         switch: s_spinner
 

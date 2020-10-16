@@ -1,5 +1,93 @@
 #config_version=5
 
 mode:
-  start_events: ball_starting
-  priority: 110
+    start_events: ball_started
+    stop_events:
+        - skill_success
+        - skill_failed
+    priority: 500
+
+shots:
+    skill_1:
+        switch: s_spinner
+        profile: skill_shot_profile
+        advance_events: mode_skillshot_started    # replace "skill_shot" with your mode name
+        # show_tokens:
+        #     light: l_lane_l
+    # skill_2:
+    #     switch: s_target_jukebox
+    #     profile: skill_shot_profile
+    #     # show_tokens:
+    #     #     light: l_lane_m
+    # skill_3:
+    #     switch: s_lane_r
+    #     profile: skill_shot_profile
+    #     # show_tokens:
+    #     #     light: l_lane_r
+
+shot_groups:
+    skill_shot:
+        shots: skill_1 #, skill_2 #, skill_3
+        # rotate_left_events: s_left_flipper_active
+        # rotate_right_events: s_right_flipper_active
+
+shot_profiles:
+    skill_shot_profile:
+        states:
+         - name: unlit
+           show: off
+         - name: flashing
+           show: flash_color
+           show_tokens:
+             color: red
+           speed: 4
+         - name: lit
+           show: on
+        loop: yes
+
+variable_player:
+  skill_success:
+    score: 37
+
+slides:
+  _overwrite: true
+  skill_success_slide:
+    widgets:
+      - type: video
+        video: skill
+        end_behavior: stop
+    expire: 2s
+
+# slide_player:
+#   skill_success:  skill_success_slide
+
+timers:
+  skill_shot_timeout:
+    start_value: 0
+    end_value: 5     # set the timeout of your skill shot here
+    direction: up
+    tick_interval: 1s
+    start_running: no
+    control_events:
+      - action: start
+        event: balldevice_bd_plunger_ball_eject_success  # replace "plunger_lane" with the name of your plunger device
+
+state_machines:
+   skill_shot_success:
+        debug: True
+        states:
+            start:
+                label: Skill shot ready
+            success:
+                label: Skill successful
+                events_when_started: skill_success
+            failed:
+                label: Skill failed
+                events_when_started: skill_failed
+        transitions:
+            - source: start
+              target: success
+              events: skill_shot_flashing_hit
+            - source: start
+              target: failed
+              events: skill_shot_unlit_hit, timer_skill_shot_timeout_complete

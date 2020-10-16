@@ -15,10 +15,11 @@ variable_player:
   s_right_flipper_active:
     score: -5
 
+# TODO: mode_skillshot_(ended or failed), need to change the scoring
   s_spinner_active:
     spinner_rotations: 1
     score: 5
-  s_jukebox_target_active:
+  s_target_jukebox_active:
     score: 5
 
 slide_player:
@@ -43,3 +44,4 @@ slide_player:
           anchor_x: right
           anchor_y: bottom
           font_size: 50
+  skill_success:  skill_success_slide

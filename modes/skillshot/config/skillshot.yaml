@@ -55,6 +55,10 @@ sound_player:
       voice_skill:
           action: play
           loops: 0
+  skill_failed:
+    sfx_bar_noise:
+      action: play
+      loops: 0
 
 slides:
   _overwrite: true
@@ -70,14 +74,15 @@ slides:
 
 timers:
   skill_shot_timeout:
-    start_value: 0
-    end_value: 5 #INFO: timeout of skillshot
-    direction: up
+    start_value: 5
+    end_value: 0 #INFO: timeout of skillshot
+    direction: down
     tick_interval: 1s
-    start_running: no
+    start_running: false
     control_events:
-      - action: start
-        event: balldevice_bd_plunger_ball_eject_success #INFO: plunger device
+    - action: start
+      event: balldevice_bd_plunger_ball_eject_success #INFO: plunger device
+      
 
 state_machines:
    skill_shot_success:

@@ -113,7 +113,7 @@ ball_devices:
         entrance_count_delay: 300ms
         eject_timeouts: 1s
         eject_targets: bd_plunger
-        debug: yes
+        # debug: yes
 
     bd_plunger:
         ball_switches: s_plunger_lane

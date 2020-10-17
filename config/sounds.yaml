@@ -97,7 +97,7 @@ sounds:
         track: sfx
     sfx_bar_noise:
         file: bar_noise.ogg
-        volume: 0.75
+        volume: 0.4
         track: sfx
     voice_laugh:
         file: tilt_laugh.ogg

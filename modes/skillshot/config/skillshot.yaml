@@ -31,6 +31,10 @@ shot_groups:
         shots: skill_1 #, skill_2 #, skill_3
         # rotate_left_events: s_left_flipper_active
         # rotate_right_events: s_right_flipper_active
+        reset_events:
+        - skill_success
+        - skill_failed
+        - ball_drain
 
 shot_profiles:
     skill_shot_profile:
@@ -80,7 +84,7 @@ timers:
     tick_interval: 1s
     start_running: false
     control_events:
-    - action: start
+    - action: restart
       event: balldevice_bd_plunger_ball_eject_success #INFO: plunger device
       
 

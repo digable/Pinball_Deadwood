@@ -1,36 +1,39 @@
 events:
-  game_ended: 110
-  game_started: 176
+  game_ended: 111
+  game_started: 266
 player:
   score:
-    average: -24.96031746031746
+    average: -23.64566929133858
     top:
     - 1815
     - 295
     - 290
     - 255
+    - 142
     - 135
     - 125
     - 105
     - 100
     - 95
-    - 80
-    total: 126
+    total: 127
+shots:
+  skill_1: 171
 switches:
   c_launch_button: 0
-  s_jukebox_target: 19
+  s_jukebox_target: 48
   s_launch_button: 30
-  s_left_flipper: 1566
-  s_left_slingshot: 469
-  s_plunger_lane: 535
-  s_right_flipper: 1307
+  s_left_flipper: 1590
+  s_left_slingshot: 538
+  s_plunger_lane: 663
+  s_right_flipper: 1335
   s_right_inlane: 21
-  s_right_slingshot: 228
-  s_spinner: 190
+  s_right_slingshot: 279
+  s_spinner: 1096
   s_start: 39
-  s_tilt: 18
+  s_target_jukebox: 683
+  s_tilt: 30
   s_trough1: 293
   s_trough2: 425
   s_trough3: 346
-  s_trough4: 481
+  s_trough4: 539
   s_trough_jam: 305

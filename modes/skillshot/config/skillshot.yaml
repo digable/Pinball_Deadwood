@@ -53,6 +53,10 @@ shot_profiles:
 variable_player:
   skill_success:
     score: 37
+  timer_skill_shot_timeout_tick:
+    skill_shot_timeout_variable:
+      int: device.timers.skill_shot_timeout.ticks
+      action: set
 
 sound_player:
   skill_success:
@@ -72,6 +76,16 @@ slides:
         video: skill
         end_behavior: stop
     expire: 2s
+    # transition:
+    #   type: wipe
+    #   duration: 2s
+    #   direction: right
+    # transition_out:
+    #   type: fade_away
+  show_timer_skillshot:
+    widgets:
+    - type: Text
+      text: (player|skill_shot_timeout_variable)
 
 # slide_player:
   # skill_success:  skill_success_slide
@@ -79,7 +93,7 @@ slides:
 timers:
   skill_shot_timeout:
     start_value: 5
-    end_value: 0 #INFO: timeout of skillshot
+    end_value: -1 #INFO: timeout of skillshot
     direction: down
     tick_interval: 1s
     start_running: false

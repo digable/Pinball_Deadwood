@@ -1,5 +1,12 @@
 #config_version=5
 
+# mpf:
+#     default_pulse_ms: 20
+
+game:
+    balls_per_game: 3
+    max_players: 4
+
 machine:
   balls_installed: 4
 

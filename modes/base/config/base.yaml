@@ -22,26 +22,420 @@ variable_player:
   s_target_jukebox_active:
     score: 5
 
+# slide_player:
+#   mode_base_started:
+#       widgets:
+#         - type: text
+#           text: (score)
+#           number_grouping: true
+#           min_digits: 2
+#           font_size: 100
+#         - type: text
+#           text: Drinker (number)
+#           y: 10
+#           x: 10
+#           font_size: 50
+#           anchor_x: left
+#           anchor_y: bottom
+#         - type: text
+#           text: Ball (ball)
+#           y: 10
+#           x: right-10
+#           anchor_x: right
+#           anchor_y: bottom
+#           font_size: 50
+#   skill_success: skill_success_slide
+
+slides:
+  base_slide: []
+  multiplayer_slide: []
+
 slide_player:
+  # single_player_ball_started: player_single
+  single_player_ball_started: base_slide
+  # multi_player_ball_started: player_multiple
+  multi_player_ball_started: multiplayer_slide
+  multiplayer_game:
+    base_slide:
+      action: remove
+    multiplayer_slide:
+      action: play
+  ball_will_end:
+    base_slide:
+      action: remove
+    multiplayer_slide:
+      action: remove
+
+widgets:
+  base_score_widget:
+    - type: text
+      text: (score)
+      number_grouping: true
+      min_digits: 2
+      font_size: 100
+  base_ball_widget:
+    - type: text
+      text: BALL (ball)    (machine|credits_string)
+      anchor_y: bottom
+      font_size: 50
+      y: bottom+1
+  mp_score_widget:
+    - type: text
+      text: (score)
+      number_grouping: true
+      min_digits: 2
+      font_size: 100
+# Player 1 score, for when they're not playing
+  mp_score_widget_player_1:
+    - type: text
+      text: (player1|score)
+      font_size: 35
+        #font: medium
+      number_grouping: true
+      min_digits: 2
+      anchor_y: top
+      anchor_x: left
+      x: left+1
+      y: top+1
+  # Player 2 score, for when they're not playing
+  mp_score_widget_player_2:
+    - type: text
+      text: (player2|score)
+      font_size: 35
+      anchor_y: top
+      anchor_x: right
+      number_grouping: true
+      min_digits: 2
+      x: right-300
+      y: top+1
+  # Player 3 score, for when they're not playing
+  mp_score_widget_player_3:
+    - type: text
+      text: (player3|score)
+      font_size: 35
+      anchor_y: bottom
+      anchor_x: left
+      number_grouping: true
+      min_digits: 2
+      x: left+1
+      y: bottom+1
+  # Player 4 score, for when they're not playing
+  mp_score_widget_player_4:
+    - type: text
+      text: (player4|score)
+      font_size: 35
+      anchor_y: bottom
+      anchor_x: right
+      number_grouping: true
+      min_digits: 2
+      x: right-300
+      y: bottom+1
+
+widget_player:
+  # First event, before additional players have a chance to enter
+  # game_started:
   mode_base_started:
-      widgets:
-        - type: text
-          text: (score)
-          number_grouping: true
-          min_digits: 2
-          font_size: 100
-        - type: text
-          text: Drinker (number)
-          y: 10
-          x: 10
-          font_size: 50
-          anchor_x: left
-          anchor_y: bottom
-        - type: text
-          text: Ball (ball)
-          y: 10
-          x: right-10
-          anchor_x: right
-          anchor_y: bottom
-          font_size: 50
-  skill_success:  skill_success_slide
+    base_score_widget:
+      slide: base_slide
+    base_ball_widget:
+      slide: base_slide
+# Player 2 has entered the game
+  player_added{num==2}:
+    mp_score_widget:
+      slide: multiplayer_slide
+    base_ball_widget:
+      slide: multiplayer_slide
+    mp_score_widget_player_2:
+      slide: multiplayer_slide
+# Player 3 has entered the game
+  player_added{num==3}:
+    mp_score_widget_player_3:
+      slide: multiplayer_slide
+  player_added{num==4}:
+    mp_score_widget_player_4:
+      slide: multiplayer_slide
+
+
+# Player Turns: Swap scores -> names when turn starts, revert when turn ends
+  player_turn_started{number==1}:
+    mp_score_widget_player_1:
+      action: remove
+  player_turn_ended{number==1}:
+    mp_score_widget_player_1:
+      slide: multiplayer_slide
+  player_turn_started{number==2}:
+    mp_score_widget_player_2:
+      action: remove
+  player_turn_ended{number==2}:
+    mp_score_widget_player_2:
+      slide: multiplayer_slide
+  player_turn_started{number==3}:
+    mp_score_widget_player_3:
+      action: remove
+  player_turn_ended{number==3}:
+    mp_score_widget_player_3:
+      slide: multiplayer_slide
+  player_turn_started{number==4}:
+    mp_score_widget_player_4:
+      action: remove
+  player_turn_ended{number==4}:
+    mp_score_widget_player_4:
+      slide: multiplayer_slide
+
+
+# slides:
+#   player_single:
+#   - type: text
+#     text: (player1|score)
+#     number_grouping: true
+#     min_digits: 2
+#     # y: middle+2
+#       #persist_slide: yes
+#     font_size: 100
+#   - type: text
+#     text: BALL (player1|ball)    (machine|credits_string)
+#     anchor_y: bottom
+#     font_size: 50
+#     y: bottom+1
+
+#   player_multiple:
+#   - type: text
+#     text: (player1|score)
+#     font_size: 35
+#       #font: medium
+#     number_grouping: true
+#     min_digits: 2
+#     anchor_y: top
+#     anchor_x: left
+#     x: left+1
+#     y: top+1
+#   - type: text
+#     text: (player2|score)
+#     font_size: 100
+#     # anchor_y: top
+#     # anchor_x: right
+#     number_grouping: true
+#     min_digits: 2
+#     # x: right-2
+#     # y: top-2
+#   - type: text
+#     text: (player3|score)
+#     font_size: 35
+#     anchor_y: bottom
+#     anchor_x: left
+#     y: bottom+1
+#     x: left+1
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: (player4|score)
+#     font_size: 35
+#     anchor_y: bottom
+#     anchor_x: right
+#     y: bottom+1
+#     x: right-300
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: BALL (player1|ball) #    (machine|credits_string)
+#     anchor_y: bottom
+#     font_size: 50
+#     y: bottom+1
+####################################################################
+# event_player:
+#   multiplayer_game: player_1_multiplayer_slide
+#   player_1_ball_started: player_1_multiplayer_slide
+
+# slide_player:
+#   single_player_ball_started: slide_1
+#   player_1_multiplayer_slide: slide_2
+#   player_2_ball_started: slide_3
+#   player_3_ball_started: slide_4
+#   player_4_ball_started: slide_5
+
+# slides:
+#   slide_1:
+#   - type: text
+#     text: (player1|score)
+#     number_grouping: true
+#     min_digits: 2
+#     y: middle+2
+#       #persist_slide: yes
+#     style: tall_title
+#   - type: text
+#     text: BALL (player1|ball)    (machine|credits_string)
+#     anchor_y: bottom
+#     style: small
+#     y: bottom+1
+
+#   slide_2:
+#   - type: text
+#     text: (player1|score)
+#       #font: medium
+#     number_grouping: true
+#     min_digits: 2
+#     anchor_y: top
+#     anchor_x: right
+#     x: right-60
+#     y: top-2
+#   - type: text
+#     text: (player2|score)
+#     style: medium
+#     anchor_y: top
+#     anchor_x: right
+#     number_grouping: true
+#     min_digits: 2
+#     x: right-2
+#     y: top-2
+#   - type: text
+#     text: (player3|score)
+#     style: medium
+#     anchor_y: bottom
+#     anchor_x: right
+#     y: bottom+10
+#     x: right-60
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: (player4|score)
+#     style: medium
+#     anchor_y: bottom
+#     anchor_x: right
+#     y: bottom+10
+#     x: right-2
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: BALL (player1|ball)    (machine|credits_string)
+#     anchor_y: bottom
+#     style: small
+#     y: bottom+1
+
+#   slide_3:
+#   - type: text
+#     text: (player1|score)
+#     style: medium
+#     number_grouping: true
+#     min_digits: 2
+#     anchor_y: top
+#     anchor_x: right
+#     x: right-60
+#     y: top-2
+#   - type: text
+#     text: (player2|score)
+# #      font: medium
+#     anchor_y: top
+#     anchor_x: right
+#     number_grouping: true
+#     min_digits: 2
+#     x: right-2
+#     y: top-2
+#   - type: text
+#     text: (player3|score)
+#     style: medium
+#     anchor_y: bottom
+#     anchor_x: right
+#     y: bottom+10
+#     x: right-60
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: (player4|score)
+#     style: medium
+#     anchor_y: bottom
+#     anchor_x: right
+#     y: bottom+10
+#     x: right-2
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: BALL (player2|ball)    (machine|credits_string)
+#     anchor_y: bottom
+#     style: small
+#     y: bottom+1
+
+#   slide_4:
+#   - type: text
+#     text: (player1|score)
+#     style: medium
+#     number_grouping: true
+#     min_digits: 2
+#     anchor_y: top
+#     anchor_x: right
+#     x: right-60
+#     y: top-2
+#   - type: text
+#     text: (player2|score)
+#     style: medium
+#     anchor_y: top
+#     anchor_x: right
+#     number_grouping: true
+#     min_digits: 2
+#     x: right-2
+#     y: top-2
+#   - type: text
+#     text: (player3|score)
+# #      font: medium
+#     anchor_y: bottom
+#     anchor_x: right
+#     y: bottom+10
+#     x: right-60
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: (player4|score)
+#     style: medium
+#     anchor_y: bottom
+#     anchor_x: right
+#     y: bottom+10
+#     x: right-2
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: BALL (player3|ball)    (machine|credits_string)
+#     anchor_y: bottom
+#     style: small
+#     y: bottom+1
+
+#   slide_5:
+#   - type: text
+#     text: (player1|score)
+#     style: medium
+#     number_grouping: true
+#     min_digits: 2
+#     anchor_y: top
+#     anchor_x: right
+#     x: right-60
+#     y: top-2
+#   - type: text
+#     text: (player2|score)
+#     style: medium
+#     anchor_y: top
+#     anchor_x: right
+#     number_grouping: true
+#     min_digits: 2
+#     x: right-2
+#     y: top-2
+#   - type: text
+#     text: (player3|score)
+#     style: medium
+#     anchor_y: bottom
+#     anchor_x: right
+#     y: bottom+10
+#     x: right-60
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: (player4|score)
+# #      font: medium
+#     anchor_y: bottom
+#     anchor_x: right
+#     y: bottom+10
+#     x: right-2
+#     number_grouping: true
+#     min_digits: 2
+#   - type: text
+#     text: BALL (player4|ball)    (machine|credits_string)
+#     anchor_y: bottom
+#     style: small
+#     y: bottom+1

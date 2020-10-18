@@ -1,5 +1,8 @@
 #config_version=5
 
+smart_virtual:
+    file_log: full
+
 virtual_platform_start_active_switches: s_trough1, s_trough2, s_trough3
 
 window:

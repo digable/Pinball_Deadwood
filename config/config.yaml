@@ -20,18 +20,12 @@ modes:
 - tilt
 - skillshot
 
-#INFO: bootup and start modes
+#INFO: bootup mode
 slides:
     welcome_slide:
         widgets:
               - type: image
                 image: ZukiDogLogo
-    attract_started:
-        widgets:
-              - type: video
-                video: attract_deadwood
-                end_behavior: loop
 slide_player:
     init_done: welcome_slide
-    mode_attract_started: attract_started
 

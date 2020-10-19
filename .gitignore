@@ -1,2 +1,4 @@
 logs
 data
+data/audits.yaml
+data/machine_vars.yaml

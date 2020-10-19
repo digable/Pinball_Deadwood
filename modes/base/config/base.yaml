@@ -73,11 +73,13 @@ widgets:
       number_grouping: true
       min_digits: 2
       font_size: 100
+      font_name: WoodenNickelNF
   base_ball_widget:
     - type: text
       text: BALL (ball)    (machine|credits_string)
       anchor_y: bottom
       font_size: 50
+      font_name: Sho-CardCapsNF
       y: bottom+1
   mp_score_widget:
     - type: text
@@ -85,12 +87,13 @@ widgets:
       number_grouping: true
       min_digits: 2
       font_size: 100
+      font_name: BELL
 # Player 1 score, for when they're not playing
   mp_score_widget_player_1:
     - type: text
       text: (player1|score)
       font_size: 35
-        #font: medium
+      font_name: BELL
       number_grouping: true
       min_digits: 2
       anchor_y: top
@@ -102,6 +105,7 @@ widgets:
     - type: text
       text: (player2|score)
       font_size: 35
+      font_name: BELL
       anchor_y: top
       anchor_x: right
       number_grouping: true
@@ -113,6 +117,7 @@ widgets:
     - type: text
       text: (player3|score)
       font_size: 35
+      font_name: BELL
       anchor_y: bottom
       anchor_x: left
       number_grouping: true
@@ -124,6 +129,7 @@ widgets:
     - type: text
       text: (player4|score)
       font_size: 35
+      font_name: BELL
       anchor_y: bottom
       anchor_x: right
       number_grouping: true

@@ -1,7 +1,7 @@
 #config_version=5
 
 mode:
-    start_events: ball_started
+    start_events: s_plunger_lane_active
     stop_events:
         - skill_success
         - skill_failed
@@ -88,7 +88,7 @@ slides:
       text: (player|skill_shot_timeout_variable)
 
 # slide_player:
-  # skill_success:  skill_success_slide
+#   skill_success:  skill_success_slide
 
 timers:
   skill_shot_timeout:

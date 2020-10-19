@@ -51,6 +51,7 @@ slides:
   multiplayer_slide: []
 
 slide_player:
+  skill_success: skill_success_slide
   # single_player_ball_started: player_single
   single_player_ball_started: base_slide
   # multi_player_ball_started: player_multiple

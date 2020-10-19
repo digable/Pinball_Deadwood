@@ -26,6 +26,8 @@ slides:
         widgets:
               - type: image
                 image: ZukiDogLogo
-slide_player:
-    init_done: welcome_slide
-
+# slide_player:
+#     init_done: welcome_slide
+#     mode_attract_started:
+#         welcome_slide:
+#             action: remove

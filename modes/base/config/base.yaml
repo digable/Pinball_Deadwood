@@ -88,13 +88,13 @@ widgets:
       number_grouping: true
       min_digits: 2
       font_size: 100
-      font_name: BELL
+      font_name: bell
 # Player 1 score, for when they're not playing
   mp_score_widget_player_1:
     - type: text
       text: (player1|score)
       font_size: 35
-      font_name: BELL
+      font_name: bell
       number_grouping: true
       min_digits: 2
       anchor_y: top
@@ -106,7 +106,7 @@ widgets:
     - type: text
       text: (player2|score)
       font_size: 35
-      font_name: BELL
+      font_name: bell
       anchor_y: top
       anchor_x: right
       number_grouping: true
@@ -118,7 +118,7 @@ widgets:
     - type: text
       text: (player3|score)
       font_size: 35
-      font_name: BELL
+      font_name: bell
       anchor_y: bottom
       anchor_x: left
       number_grouping: true
@@ -130,7 +130,7 @@ widgets:
     - type: text
       text: (player4|score)
       font_size: 35
-      font_name: BELL
+      font_name: bell
       anchor_y: bottom
       anchor_x: right
       number_grouping: true

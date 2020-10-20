@@ -24,3 +24,9 @@ variable_player:
 
 slide_player:
   skill_success: skill_success_slide
+  
+sound_player:
+  ball_drain:
+    sfx_ball_drain:
+      action: play
+      loops: 0

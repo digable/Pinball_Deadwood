@@ -1,14 +1,16 @@
 #config_version=5
 
-slides:
-    attract_started:
-        widgets:
-              - type: video
-                video: attract_deadwood
-                end_behavior: loop
+# - duration: 10s
+# slides:
+#   attract_started:
+#     widgets:
+#       - type: video
+#         video: attract_deadwood #video is 10s 
+#         end_behavior: loop
 
-slide_player:
-  mode_attract_started: attract_started
+show_player:
+  # mode_attract_started: attract_started
+  mode_attract_started: attract_display_loop
 
 sound_player:
   mode_attract_started:

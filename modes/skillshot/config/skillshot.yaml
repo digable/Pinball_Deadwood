@@ -60,11 +60,11 @@ variable_player:
 
 sound_player:
   skill_success:
-      voice_skill:
-          action: play
-          loops: 0
+    voice_skill:
+      action: play
+      loops: 0
   skill_failed:
-    sfx_bar_noise:
+    sfx_skill_fail:
       action: play
       loops: 0
 

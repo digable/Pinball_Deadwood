@@ -99,12 +99,20 @@ sounds:
         file: bar_noise.ogg
         volume: 0.4
         track: sfx
+    sfx_ball_drain:
+        file: ball_drain.ogg
+        volume: 0.75
+        track: sfx
+    sfx_skill_fail:
+        file: skill_fail.ogg
+        volume: 0.75
+        track: sfx
     voice_laugh:
         file: tilt_laugh.ogg
         volume: 0.75
         track: voice
-    voice_ball_drain:
-        file: ball_drain.ogg
+    voice_awe:
+        file: awe.ogg
         volume: 0.75
         track: voice
     voice_skill:

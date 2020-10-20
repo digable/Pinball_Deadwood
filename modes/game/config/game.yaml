@@ -41,11 +41,22 @@ widgets:
       number_grouping: true
       min_digits: 2
       font_size: 100
-      font_name: bell
+      font_name: WoodenNickelNF
 # Player 1 score, for when they're not playing
   mp_score_widget_player_1:
     - type: text
       text: (player1|score)
+      font_size: 35
+      font_name: bell
+      number_grouping: true
+      min_digits: 2
+      anchor_y: top
+      anchor_x: left
+      x: left+1
+      y: top+1
+  mp_name_widget_player_1:
+    - type: text
+      text: Drinker 1
       font_size: 35
       font_name: bell
       number_grouping: true
@@ -66,10 +77,32 @@ widgets:
       min_digits: 2
       x: right-300
       y: top+1
+  mp_name_widget_player_2:
+    - type: text
+      text: Drinker 2
+      font_size: 35
+      font_name: bell
+      anchor_y: top
+      anchor_x: right
+      number_grouping: true
+      min_digits: 2
+      x: right-300
+      y: top+1
   # Player 3 score, for when they're not playing
   mp_score_widget_player_3:
     - type: text
       text: (player3|score)
+      font_size: 35
+      font_name: bell
+      anchor_y: bottom
+      anchor_x: left
+      number_grouping: true
+      min_digits: 2
+      x: left+1
+      y: bottom+1
+  mp_name_widget_player_3:
+    - type: text
+      text: Drinker 3
       font_size: 35
       font_name: bell
       anchor_y: bottom
@@ -90,10 +123,20 @@ widgets:
       min_digits: 2
       x: right-300
       y: bottom+1
+  mp_name_widget_player_4:
+    - type: text
+      text: Drinker 4
+      font_size: 35
+      font_name: bell
+      anchor_y: bottom
+      anchor_x: right
+      number_grouping: true
+      min_digits: 2
+      x: right-300
+      y: bottom+1
 
 widget_player:
   # First event, before additional players have a chance to enter
-  # game_started:
   mode_base_started:
     base_score_widget:
       slide: base_slide
@@ -111,6 +154,7 @@ widget_player:
   player_added{num==3}:
     mp_score_widget_player_3:
       slide: multiplayer_slide
+# Player 4 has entered the game
   player_added{num==4}:
     mp_score_widget_player_4:
       slide: multiplayer_slide
@@ -120,24 +164,51 @@ widget_player:
   player_turn_started{number==1}:
     mp_score_widget_player_1:
       action: remove
+    mp_name_widget_player_1:
+      slide: multiplayer_slide
+    # base_ball_widget:
+    #   slide: multiplayer_slide
   player_turn_ended{number==1}:
+    mp_name_widget_player_1:
+      action: remove
     mp_score_widget_player_1:
       slide: multiplayer_slide
+
   player_turn_started{number==2}:
     mp_score_widget_player_2:
       action: remove
+    mp_name_widget_player_2:
+      slide: multiplayer_slide
+    # base_ball_widget:
+    #   slide: multiplayer_slide
   player_turn_ended{number==2}:
+    mp_name_widget_player_2:
+      action: remove
     mp_score_widget_player_2:
       slide: multiplayer_slide
+
   player_turn_started{number==3}:
     mp_score_widget_player_3:
       action: remove
+    mp_name_widget_player_3:
+      slide: multiplayer_slide
+    # base_ball_widget:
+    #   slide: multiplayer_slide
   player_turn_ended{number==3}:
+    mp_name_widget_player_3:
+      action: remove
     mp_score_widget_player_3:
       slide: multiplayer_slide
+
   player_turn_started{number==4}:
     mp_score_widget_player_4:
       action: remove
+    mp_name_widget_player_4:
+      slide: multiplayer_slide
+    # base_ball_widget:
+    #   slide: multiplayer_slide
   player_turn_ended{number==4}:
+    mp_name_widget_player_3:
+      action: remove
     mp_score_widget_player_4:
       slide: multiplayer_slide

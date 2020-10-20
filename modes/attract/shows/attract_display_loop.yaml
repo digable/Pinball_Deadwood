@@ -1,37 +1,43 @@
 #show_version=5
  
-- duration: 10s
+- duration: 5
   slides:
-    attract_started:
+    # attract_started:
       widgets:
         - type: video
           video: attract_deadwood #video is 10s 
           end_behavior: loop
 
-- duration: 3s
+- duration: 6
   slides:
     press_start:
       widgets:
-      - type: Text
-        text: PRESS START
-        animations:
-          pre_show_slide:
-            - property: opacity
-              value: 0
-              duration: .5s
-            - property: opacity
-              value: 1
-              duration: .5s
-              repeat: false
-      - type: Text
-        text: FREE PLAY
-        color: green
-        y: 10
-        anchor_y: bottom
+        - type: video
+          video: attract_press_start #video is 10s 
+          end_behavior: loop
+      # widgets:
+      # - type: Text
+      #   text: PRESS START
+      #   animations:
+      #     pre_show_slide:
+      #       - property: opacity
+      #         value: 0
+      #         duration: .5s
+      #       - property: opacity
+      #         value: 1
+      #         duration: .5s
+      #         repeat: false
+        - type: Text
+          text: (machine|credits_string)
+          color: green
+          anchor_y: bottom
+          font_size: 50
+          font_name: Sho-CardCapsNF
+          y: bottom+1
       transition:
          type: move_in
          duration: 1s
-         direction: right
+         direction: top
 
 - duration: 3
   slides:

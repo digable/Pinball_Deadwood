@@ -54,6 +54,12 @@ widgets:
       anchor_x: left
       x: left+1
       y: top+1
+    - type: text
+      text: BALL (ball)    (machine|credits_string)
+      anchor_y: bottom
+      font_size: 50
+      font_name: Sho-CardCapsNF
+      y: bottom+1
   mp_name_widget_player_1:
     - type: text
       text: Drinker 1
@@ -77,6 +83,12 @@ widgets:
       min_digits: 2
       x: right-300
       y: top+1
+    - type: text
+      text: BALL (ball)    (machine|credits_string)
+      anchor_y: bottom
+      font_size: 50
+      font_name: Sho-CardCapsNF
+      y: bottom+1
   mp_name_widget_player_2:
     - type: text
       text: Drinker 2
@@ -100,6 +112,12 @@ widgets:
       min_digits: 2
       x: left+1
       y: bottom+1
+    - type: text
+      text: BALL (ball)    (machine|credits_string)
+      anchor_y: bottom
+      font_size: 50
+      font_name: Sho-CardCapsNF
+      y: bottom+1
   mp_name_widget_player_3:
     - type: text
       text: Drinker 3
@@ -122,6 +140,12 @@ widgets:
       number_grouping: true
       min_digits: 2
       x: right-300
+      y: bottom+1
+    - type: text
+      text: BALL (ball)    (machine|credits_string)
+      anchor_y: bottom
+      font_size: 50
+      font_name: Sho-CardCapsNF
       y: bottom+1
   mp_name_widget_player_4:
     - type: text
@@ -208,7 +232,7 @@ widget_player:
     # base_ball_widget:
     #   slide: multiplayer_slide
   player_turn_ended{number==4}:
-    mp_name_widget_player_3:
+    mp_name_widget_player_4:
       action: remove
     mp_score_widget_player_4:
       slide: multiplayer_slide

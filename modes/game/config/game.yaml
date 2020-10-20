@@ -1,0 +1,143 @@
+#config_version=5
+
+slides:
+  base_slide: []
+  multiplayer_slide: []
+
+slide_player:
+  # single_player_ball_started: player_single
+  single_player_ball_started: base_slide
+  # multi_player_ball_started: player_multiple
+  multi_player_ball_started: multiplayer_slide
+  multiplayer_game:
+    base_slide:
+      action: remove
+    multiplayer_slide:
+      action: play
+  ball_will_end:
+    base_slide:
+      action: remove
+    multiplayer_slide:
+      action: remove
+
+widgets:
+  base_score_widget:
+    - type: text
+      text: (score)
+      number_grouping: true
+      min_digits: 2
+      font_size: 100
+      font_name: WoodenNickelNF
+  base_ball_widget:
+    - type: text
+      text: BALL (ball)    (machine|credits_string)
+      anchor_y: bottom
+      font_size: 50
+      font_name: Sho-CardCapsNF
+      y: bottom+1
+  mp_score_widget:
+    - type: text
+      text: (score)
+      number_grouping: true
+      min_digits: 2
+      font_size: 100
+      font_name: bell
+# Player 1 score, for when they're not playing
+  mp_score_widget_player_1:
+    - type: text
+      text: (player1|score)
+      font_size: 35
+      font_name: bell
+      number_grouping: true
+      min_digits: 2
+      anchor_y: top
+      anchor_x: left
+      x: left+1
+      y: top+1
+  # Player 2 score, for when they're not playing
+  mp_score_widget_player_2:
+    - type: text
+      text: (player2|score)
+      font_size: 35
+      font_name: bell
+      anchor_y: top
+      anchor_x: right
+      number_grouping: true
+      min_digits: 2
+      x: right-300
+      y: top+1
+  # Player 3 score, for when they're not playing
+  mp_score_widget_player_3:
+    - type: text
+      text: (player3|score)
+      font_size: 35
+      font_name: bell
+      anchor_y: bottom
+      anchor_x: left
+      number_grouping: true
+      min_digits: 2
+      x: left+1
+      y: bottom+1
+  # Player 4 score, for when they're not playing
+  mp_score_widget_player_4:
+    - type: text
+      text: (player4|score)
+      font_size: 35
+      font_name: bell
+      anchor_y: bottom
+      anchor_x: right
+      number_grouping: true
+      min_digits: 2
+      x: right-300
+      y: bottom+1
+
+widget_player:
+  # First event, before additional players have a chance to enter
+  # game_started:
+  mode_base_started:
+    base_score_widget:
+      slide: base_slide
+    base_ball_widget:
+      slide: base_slide
+# Player 2 has entered the game
+  player_added{num==2}:
+    mp_score_widget:
+      slide: multiplayer_slide
+    base_ball_widget:
+      slide: multiplayer_slide
+    mp_score_widget_player_2:
+      slide: multiplayer_slide
+# Player 3 has entered the game
+  player_added{num==3}:
+    mp_score_widget_player_3:
+      slide: multiplayer_slide
+  player_added{num==4}:
+    mp_score_widget_player_4:
+      slide: multiplayer_slide
+
+
+# Player Turns: Swap scores -> names when turn starts, revert when turn ends
+  player_turn_started{number==1}:
+    mp_score_widget_player_1:
+      action: remove
+  player_turn_ended{number==1}:
+    mp_score_widget_player_1:
+      slide: multiplayer_slide
+  player_turn_started{number==2}:
+    mp_score_widget_player_2:
+      action: remove
+  player_turn_ended{number==2}:
+    mp_score_widget_player_2:
+      slide: multiplayer_slide
+  player_turn_started{number==3}:
+    mp_score_widget_player_3:
+      action: remove
+  player_turn_ended{number==3}:
+    mp_score_widget_player_3:
+      slide: multiplayer_slide
+  player_turn_started{number==4}:
+    mp_score_widget_player_4:
+      action: remove
+  player_turn_ended{number==4}:
+    mp_score_widget_player_4:
+      slide: multiplayer_slide

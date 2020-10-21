@@ -103,7 +103,7 @@ coils:
         default_pulse_ms: 10
     c_drop_target_reset:
         number: A0-B1-4
-        default_pulse_ms: 20
+        default_pulse_ms: 60
 
 autofire_coils:
     left_slingshot:
@@ -160,3 +160,8 @@ drop_target_banks:
         drop_targets: coin1, coin2, game_room_door
         reset_coils: c_drop_target_reset
         reset_on_complete: 1s
+        reset_events:
+          ball_started.1: 0
+          ball_started.2: 1s
+          ball_started.3: 2s
+          machine_reset_phase_3: 0

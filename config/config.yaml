@@ -10,6 +10,7 @@ config:
 # - hardware_virtual.yaml #INFO: UNcomment for virtual
 - assets.yaml
 - sounds.yaml
+- styles.yaml
 - shots.yaml
 - timers.yaml
 
@@ -17,8 +18,10 @@ config:
 
 modes:
 - base
+- high_score
 - tilt
 - skillshot
+- game_room
 
 #INFO: bootup mode
 slides:

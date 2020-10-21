@@ -121,7 +121,7 @@
           style: attract_mode_high_score_display_score
           y: top-600
 
-- duration: 3
+- duration: 10s
   slides:
     last_game_score_slide:
       widgets:

@@ -5,9 +5,7 @@ slides:
   multiplayer_slide: []
 
 slide_player:
-  # single_player_ball_started: player_single
   single_player_ball_started: base_slide
-  # multi_player_ball_started: player_multiple
   multi_player_ball_started: multiplayer_slide
   multiplayer_game:
     base_slide:
@@ -24,140 +22,71 @@ widgets:
   base_score_widget:
     - type: text
       text: (score)
-      number_grouping: true
-      min_digits: 2
-      font_size: 100
-      font_name: WoodenNickelNF
+      style: base_score_display
   base_ball_widget:
     - type: text
       text: BALL (ball)    (machine|credits_string)
-      anchor_y: bottom
-      font_size: 50
-      font_name: Sho-CardCapsNF
-      y: bottom+1
+      style: base_ball_display
   mp_score_widget:
     - type: text
       text: (score)
-      number_grouping: true
-      min_digits: 2
-      font_size: 100
-      font_name: WoodenNickelNF
-# Player 1 score, for when they're not playing
+      style: base_score_display
+
+  #INFO: Player 1 score, for when they're not playing
   mp_score_widget_player_1:
     - type: text
       text: (player1|score)
-      font_size: 35
-      font_name: bell
-      number_grouping: true
-      min_digits: 2
-      anchor_y: top
-      anchor_x: left
-      x: left+1
-      y: top+1
+      style: base_player1_display
     - type: text
       text: BALL (ball)    (machine|credits_string)
-      anchor_y: bottom
-      font_size: 50
-      font_name: Sho-CardCapsNF
-      y: bottom+1
+      style: base_ball_display
+  #INFO: Player 1 name, when they are playing
   mp_name_widget_player_1:
     - type: text
       text: Drinker 1
-      font_size: 35
-      font_name: bell
-      number_grouping: true
-      min_digits: 2
-      anchor_y: top
-      anchor_x: left
-      x: left+1
-      y: top+1
-  # Player 2 score, for when they're not playing
+      style: base_player1_display
+      
+  #INFO: Player 2 score, for when they're not playing
   mp_score_widget_player_2:
     - type: text
       text: (player2|score)
-      font_size: 35
-      font_name: bell
-      anchor_y: top
-      anchor_x: right
-      number_grouping: true
-      min_digits: 2
-      x: right-300
-      y: top+1
+      style: base_player2_display
     - type: text
       text: BALL (ball)    (machine|credits_string)
-      anchor_y: bottom
-      font_size: 50
-      font_name: Sho-CardCapsNF
-      y: bottom+1
+      style: base_ball_display
+  #INFO: Player 2 name, when they are playing
   mp_name_widget_player_2:
     - type: text
       text: Drinker 2
-      font_size: 35
-      font_name: bell
-      anchor_y: top
-      anchor_x: right
-      number_grouping: true
-      min_digits: 2
-      x: right-300
-      y: top+1
-  # Player 3 score, for when they're not playing
+      style: base_player2_display
+
+  #INFO: Player 3 score, for when they're not playing
   mp_score_widget_player_3:
     - type: text
       text: (player3|score)
-      font_size: 35
-      font_name: bell
-      anchor_y: bottom
-      anchor_x: left
-      number_grouping: true
-      min_digits: 2
-      x: left+1
-      y: bottom+1
+      style: base_player3_display
     - type: text
       text: BALL (ball)    (machine|credits_string)
-      anchor_y: bottom
-      font_size: 50
-      font_name: Sho-CardCapsNF
-      y: bottom+1
+      style: base_ball_display
+  #INFO: Player 3 name, when they are playing
   mp_name_widget_player_3:
     - type: text
       text: Drinker 3
-      font_size: 35
-      font_name: bell
-      anchor_y: bottom
-      anchor_x: left
-      number_grouping: true
-      min_digits: 2
-      x: left+1
-      y: bottom+1
-  # Player 4 score, for when they're not playing
+      style: base_player3_display
+
+  #INFO: Player 4 score, for when they're not playing
   mp_score_widget_player_4:
     - type: text
       text: (player4|score)
-      font_size: 35
-      font_name: bell
-      anchor_y: bottom
-      anchor_x: right
-      number_grouping: true
-      min_digits: 2
-      x: right-300
-      y: bottom+1
+      style: base_player4_display
     - type: text
       text: BALL (ball)    (machine|credits_string)
-      anchor_y: bottom
-      font_size: 50
-      font_name: Sho-CardCapsNF
-      y: bottom+1
+      style: base_ball_display
+  #INFO: Player 4 name, when they are playing
   mp_name_widget_player_4:
     - type: text
       text: Drinker 4
-      font_size: 35
-      font_name: bell
-      anchor_y: bottom
-      anchor_x: right
-      number_grouping: true
-      min_digits: 2
-      x: right-300
-      y: bottom+1
+      style: base_player4_display
 
 widget_player:
   # First event, before additional players have a chance to enter
@@ -168,6 +97,8 @@ widget_player:
       slide: base_slide
 # Player 2 has entered the game
   player_added{num==2}:
+    base_slide:
+      action: remove
     mp_score_widget:
       slide: multiplayer_slide
     base_ball_widget:
@@ -190,8 +121,6 @@ widget_player:
       action: remove
     mp_name_widget_player_1:
       slide: multiplayer_slide
-    # base_ball_widget:
-    #   slide: multiplayer_slide
   player_turn_ended{number==1}:
     mp_name_widget_player_1:
       action: remove
@@ -203,8 +132,6 @@ widget_player:
       action: remove
     mp_name_widget_player_2:
       slide: multiplayer_slide
-    # base_ball_widget:
-    #   slide: multiplayer_slide
   player_turn_ended{number==2}:
     mp_name_widget_player_2:
       action: remove
@@ -216,8 +143,6 @@ widget_player:
       action: remove
     mp_name_widget_player_3:
       slide: multiplayer_slide
-    # base_ball_widget:
-    #   slide: multiplayer_slide
   player_turn_ended{number==3}:
     mp_name_widget_player_3:
       action: remove
@@ -229,8 +154,6 @@ widget_player:
       action: remove
     mp_name_widget_player_4:
       slide: multiplayer_slide
-    # base_ball_widget:
-    #   slide: multiplayer_slide
   player_turn_ended{number==4}:
     mp_name_widget_player_4:
       action: remove

@@ -64,10 +64,13 @@ switches:
 
     s_drop_target_left:
         number: A1-B1-0
+        type: 'NC'
     s_drop_target_middle:
         number: A1-B1-1
+        type: 'NC'
     s_drop_target_right: #INFO: game room entrance
         number: A1-B1-2
+        type: 'NC'
 
     s_tilt:
         number: A0-B1-3

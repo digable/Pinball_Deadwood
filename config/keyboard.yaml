@@ -34,6 +34,13 @@ keyboard:
     0:
         switch: s_right_slingshot
 
+    x:
+        switch: s_drop_target_left
+    c:
+        switch: s_drop_target_middle
+    v:
+        switch: s_drop_target_right #INFO: game room entrance
+
     l:
         switch: s_launch_button
     t:

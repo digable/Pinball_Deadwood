@@ -52,13 +52,6 @@ switches:
         number: A0-B1-1
         tags: start
 
-#INFO: only there to show playfield active, once more switches are on the playfield this will not be necessary
-#INFO:START only needed for virtual
-    # s_right_inlane:
-    #     number: A1-B1-2
-    #     tags: playfield_active
-#INFO:STOP only needed for virtual
-
     s_left_slingshot:
         number: A0-B0-6
     s_right_slingshot:
@@ -68,6 +61,13 @@ switches:
         number: A0-B1-7
     s_target_jukebox:
         number: A0-B1-6
+
+    s_drop_target_left:
+        number: A1-B1-0
+    s_drop_target_middle:
+        number: A1-B1-1
+    s_drop_target_right: #INFO: game room entrance
+        number: A1-B1-2
 
     s_tilt:
         number: A0-B1-3
@@ -101,6 +101,9 @@ coils:
     c_right_slingshot:
         number: A0-B1-0
         default_pulse_ms: 10
+    c_drop_target_reset:
+        number: A0-B1-4
+        default_pulse_ms: 20
 
 autofire_coils:
     left_slingshot:
@@ -144,4 +147,16 @@ flippers:
         hold_coil: c_flipper_right_hold
         activation_switch: s_right_flipper
 
+drop_targets:
+    coin1:
+        switch: s_drop_target_left
+    coin2:
+        switch: s_drop_target_middle
+    game_room_door:
+        switch: s_drop_target_right
 
+drop_target_banks:
+    game_room:
+        drop_targets: coin1, coin2, game_room_door
+        reset_coils: c_drop_target_reset
+        reset_on_complete: 1s

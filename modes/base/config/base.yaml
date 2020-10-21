@@ -22,6 +22,15 @@ variable_player:
   s_target_jukebox_active:
     score: 5
 
+  s_drop_target_left_active:
+    score: 25
+  s_drop_target_middle_active:
+    score: 25
+  s_drop_target_right_active:
+    score: 25
+  
+
+
 slide_player:
   skill_success: skill_success_slide
   

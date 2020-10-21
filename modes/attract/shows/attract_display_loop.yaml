@@ -27,25 +27,26 @@
       #         value: 1
       #         duration: .5s
       #         repeat: false
-        - type: Text
-          text: (machine|credits_string)
-          color: green
-          anchor_y: bottom
-          font_size: 50
-          font_name: Sho-CardCapsNF
-          y: bottom+1
       transition:
          type: move_in
          duration: 1s
-         direction: top
+         direction: bottom
 
 - duration: 3
   slides:
     mission_pinball:
       widgets:
       - type: Text
-        text: MISSION PINBALL
+        text: MISSION PINBALL FRAMEWORK
         color: red
+        font_size: 80
+      - type: Text
+        text: (machine|credits_string)
+        color: green
+        anchor_y: bottom
+        font_size: 50
+        font_name: Sho-CardCapsNF
+        y: bottom+1
       transition:
          type: move_in
          duration: 1s
@@ -60,8 +61,20 @@
         font_size: 50
         y: 60%
       - type: text
-        text: (machine|player1_score)
+        text: "Drinker 1 --> (machine|player1_score)\nDrinker 2 --> (machine|player2_score)\nDrinker 3 --> (machine|player3_score)\nDrinker 4 --> (machine|player4_score)"
         number_grouping: true
         min_digits: 2
         font_size: 50
         y: 40%
+
+      - type: Text
+        text: (machine|credits_string)
+        color: green
+        anchor_y: bottom
+        font_size: 50
+        font_name: Sho-CardCapsNF
+        y: bottom+1
+      transition:
+        type: move_in
+        duration: 1s
+        direction: left

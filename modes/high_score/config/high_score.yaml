@@ -108,9 +108,9 @@ slides:
     text: ''
     key: high_score
     font_size: 50
+    x: left+120
+    y: bottom+50
     # style: tall_title
-    x: 105
-    y: 50
     color: ff00ff
     animations:
       show_slide:
@@ -146,16 +146,20 @@ slides:
   - type: text
     text: (award)
     font_size: 50
+    anchor_y: middle
+    anchor_x: middle
+    x: middle
+    y: middle+75
     # style: tall_title
-    x: 105
-    y: 110
     color: 0000ff
   - type: text
     text: (value)
+    anchor_y: middle
+    anchor_x: middle
+    x: middle
+    y: middle+150
     # style: tall_title
-    x: 105
-    y: 30
     color: 4040FF
-    font_size: 20
+    font_size: 125
     number_grouping: true
     min_digits: 2

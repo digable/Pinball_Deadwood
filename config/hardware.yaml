@@ -72,21 +72,21 @@ switches:
         number: A1-B1-2
         type: NC
 
-    s_vari_0:
+    s_varitarget_0:
         number: A1-B0-0
-    s_vari_1:
+    s_varitarget_1:
         number: A1-B0-1
-    s_vari_2:
+    s_varitarget_2:
         number: A1-B0-2
-    s_vari_3:
+    s_varitarget_3:
         number: A1-B0-3
-    s_vari_4:
+    s_varitarget_4:
         number: A1-B0-4
-    s_vari_5:
+    s_varitarget_5:
         number: A1-B0-5
-    s_vari_6:
+    s_varitarget_6:
         number: A1-B0-6
-    s_vari_7:
+    s_varitarget_7:
         number: A1-B0-7
 
     s_tilt:
@@ -124,9 +124,9 @@ coils:
     c_drop_target_reset:
         number: A0-B1-4
         default_pulse_ms: 60
-    c_vari_reset:
+    c_varitarget_reset:
         number: A0-B1-5
-        default_pulse_ms: 60
+        default_pulse_ms: 30
 
 autofire_coils:
     left_slingshot:

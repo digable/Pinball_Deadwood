@@ -29,8 +29,8 @@ variable_player:
   s_drop_target_right_active:
     score: 25
   
-  s_varitarget_0_active:
-    score: 5
+  # s_varitarget_0_active:
+    # score: 5
   s_varitarget_1_active:
     score: 10
   s_varitarget_2_active:

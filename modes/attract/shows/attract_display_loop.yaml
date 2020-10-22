@@ -2,11 +2,10 @@
 
 - duration: 5
   slides:
-    # attract_started:
-      widgets:
-        - type: video
-          video: attract_deadwood
-          end_behavior: loop
+    widgets:
+      - type: video
+        video: attract_deadwood
+        end_behavior: loop
 
 - duration: 6
   slides:

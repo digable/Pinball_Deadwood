@@ -9,12 +9,9 @@
 #         end_behavior: loop
 
 show_player:
-  # mode_attract_started: attract_started
   mode_attract_started: attract_display_loop
-      # s_right_flipper_active: advance
-      #   action: advance
-      # s_left_flipper_active: step_back
-      #   action: step_back
+  # shift_left_event: s_left_flipper_active
+  # shift_right_event: s_right_flipper_active
 
 sound_player:
   mode_attract_started:

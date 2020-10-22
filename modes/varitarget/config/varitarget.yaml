@@ -4,16 +4,17 @@ mode:
   priority: 500
 
 event_player:
-  mode_varitarget_mechanics_started: reset_varitarget
-  s_schwartz_power_2_active: varitarget_level_1_reached
-  s_schwartz_power_3_active: varitarget_level_2_reached
-  s_schwartz_power_4_active: varitarget_level_3_reached
-  s_schwartz_power_5_active: varitarget_level_4_reached
-  s_schwartz_power_6_active: varitarget_level_5_reached
-  s_schwartz_power_7_active: varitarget_maxed
-  varitarget_maxed: varitarget_level_6_reached
-  varitarget_maxed{current_player.varitarget_use10s_delay<=0}: reset_varitarget|1000ms
-  varitarget_maxed{current_player.varitarget_use10s_delay>=1}: reset_varitarget|10000ms
+  # mode_varitarget_mechanics_started: reset_varitarget
+  mode_varitarget_started: reset_target
+  # s_schwartz_power_2_active: varitarget_level_1_reached
+  # s_schwartz_power_3_active: varitarget_level_2_reached
+  # s_schwartz_power_4_active: varitarget_level_3_reached
+  # s_schwartz_power_5_active: varitarget_level_4_reached
+  # s_schwartz_power_6_active: varitarget_level_5_reached
+  # s_schwartz_power_7_active: varitarget_maxed
+  # varitarget_maxed: varitarget_level_6_reached
+  # varitarget_maxed{current_player.varitarget_use10s_delay<=0}: reset_varitarget|1000ms
+  # varitarget_maxed{current_player.varitarget_use10s_delay>=1}: reset_varitarget|10000ms
   
   reset_varitarget:
     -stop_varitarget_shows|250ms

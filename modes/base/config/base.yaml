@@ -10,10 +10,10 @@ variable_player:
   s_right_slingshot_active:
     score: 20
 
-  s_left_flipper_active:
-    score: -5
-  s_right_flipper_active:
-    score: -5
+  # s_left_flipper_active:
+  #   score: -5
+  # s_right_flipper_active:
+  #   score: -5
 
 # TODO: mode_skillshot_(ended or failed), need to change the scoring
   s_spinner_active:
@@ -46,11 +46,22 @@ variable_player:
   s_vari_7_active:
     score: 40
 
+# event_player:
+#   flipper_cardle_active:
+#       score: -12
+
+# timed_switches:
+#   flipper_cradle:
+#     switch_tags: left_flipper, right_flipper
+#     time: 3s
+#     events_when_active: flipper_cradle
+#     events_when_released: flipper_cradle_release
+
 slide_player:
   skill_success: skill_success_slide
   
 sound_player:
-  ball_drain:
+  ball_ending:
     sfx_ball_drain:
       action: play
       loops: 0

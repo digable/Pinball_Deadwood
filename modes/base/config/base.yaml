@@ -29,7 +29,22 @@ variable_player:
   s_drop_target_right_active:
     score: 25
   
-
+  s_vari_0_active:
+    score: 5
+  s_vari_1_active:
+    score: 10
+  s_vari_2_active:
+    score: 15
+  s_vari_3_active:
+    score: 20
+  s_vari_4_active:
+    score: 25
+  s_vari_5_active:
+    score: 30
+  s_vari_6_active:
+    score: 35
+  s_vari_7_active:
+    score: 40
 
 slide_player:
   skill_success: skill_success_slide

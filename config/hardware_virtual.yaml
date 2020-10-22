@@ -15,14 +15,14 @@ keyboard:
 
 switches:
     c_launch_button: 
-        number: A1-B0-6 
+        number: A99-B99-1 
         # default_pulse_ms: 20
     s_launch_button:
-        number: A1-B0-7
+        number: A99-B99-2
 
 #INFO: only there to show playfield active, once more switches are on the playfield this will not be necessary
     s_right_inlane:
-        number: A99-B99-2
+        number: A99-B99-3
         tags: playfield_active
 
     s_left_slingshot:

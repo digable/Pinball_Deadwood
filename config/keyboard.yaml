@@ -41,7 +41,24 @@ keyboard:
     v:
         switch: s_drop_target_right #INFO: game room entrance
 
+    w:
+        switch: s_vari_0
+    e:
+        switch: s_vari_1
+    r:
+        switch: s_vari_2
+    t:
+        switch: s_vari_3
+    y:
+        switch: s_vari_4
+    u:
+        switch: s_vari_5
+    i:
+        switch: s_vari_6
+    o:
+        switch: s_vari_7
+
     l:
         switch: s_launch_button
-    t:
+    b:
         switch: s_tilt

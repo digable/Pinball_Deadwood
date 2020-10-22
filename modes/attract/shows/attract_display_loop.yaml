@@ -5,7 +5,7 @@
     # attract_started:
       widgets:
         - type: video
-          video: attract_deadwood #video is 10s 
+          video: attract_deadwood
           end_behavior: loop
 
 - duration: 6
@@ -13,20 +13,8 @@
     press_start:
       widgets:
         - type: video
-          video: attract_press_start #video is 10s 
+          video: attract_press_start
           end_behavior: loop
-      # widgets:
-      # - type: Text
-      #   text: PRESS START
-      #   animations:
-      #     pre_show_slide:
-      #       - property: opacity
-      #         value: 0
-      #         duration: .5s
-      #       - property: opacity
-      #         value: 1
-      #         duration: .5s
-      #         repeat: false
       transition:
          type: move_in
          duration: 1s
@@ -43,10 +31,7 @@
       - type: Text
         text: (machine|credits_string)
         color: green
-        anchor_y: bottom
-        font_size: 50
-        font_name: Sho-CardCapsNF
-        y: bottom+1
+        style: base_ball_display
       transition:
          type: move_in
          duration: 1s
@@ -120,30 +105,40 @@
           text: (machine|loops1_value)
           style: attract_mode_high_score_display_score
           y: top-600
+        - type: Text
+          text: (machine|credits_string)
+          color: green
+          style: base_ball_display
+        transition:
+          type: move_in
+          duration: 1s
+          direction: left
 
 - duration: 10s
   slides:
     last_game_score_slide:
       widgets:
       - type: text
-        text: LAST GAME
-        font_size: 50
-        y: 60%
+        text: LAST SCORES
+        font_size: 150
+        font_name: bell
       - type: text
-        text: "Drinker 1 --> (machine|player1_score)\nDrinker 2 --> (machine|player2_score)\nDrinker 3 --> (machine|player3_score)\nDrinker 4 --> (machine|player4_score)"
-        number_grouping: true
-        min_digits: 2
-        font_size: 50
-        y: 40%
-
+        text: Drinker 1 --> (machine|player1_score)
+        style: base_player1_display
+      - type: text
+        text: Drinker 2 --> (machine|player2_score)
+        style: base_player2_display
+      - type: text
+        text: Drinker 3 --> (machine|player3_score)
+        style: base_player3_display
+      - type: text
+        text: Drinker 4 --> (machine|player4_score)
+        style: base_player4_display
       - type: Text
         text: (machine|credits_string)
         color: green
-        anchor_y: bottom
-        font_size: 50
-        font_name: Sho-CardCapsNF
-        y: bottom+1
+        style: base_ball_display
       transition:
         type: move_in
         duration: 1s
-        direction: left
+        direction: right

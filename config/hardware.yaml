@@ -195,7 +195,7 @@ drop_target_banks:
 
 lights:
     l_jukebox_rgb:
-        number: 1-2-3-4
+        number: 1-0-1-2
         platform_settings:
             polarity: False
 

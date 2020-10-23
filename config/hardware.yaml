@@ -127,6 +127,10 @@ coils:
     c_varitarget_reset:
         number: A0-B1-5
         default_pulse_ms: 30
+    c_dummy_1:
+        number: A2-B0-0
+    c_dummy_2:
+        number: A2-B1-0
 
 autofire_coils:
     left_slingshot:
@@ -188,3 +192,12 @@ drop_target_banks:
           ball_started.2: 1s
           ball_started.3: 2s
           machine_reset_phase_3: 0
+
+lights:
+    l_jukebox_rgb:
+        number: 1-2-3-4
+        platform_settings:
+            polarity: False
+
+light_settings:
+   default_fade_ms: 40

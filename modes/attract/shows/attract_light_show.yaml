@@ -1,0 +1,20 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_jukebox_rgb: red
+- duration: 1
+  lights:
+    l_jukebox_rgb: green
+- duration: 1
+  lights:
+    l_jukebox_rgb: blue
+
+- duration: 1
+  lights:
+    l_jukebox_rgb: ffa500
+- duration: 1
+  lights:
+    l_jukebox_rgb: ff00ff
+- duration: 1
+  lights:
+    l_jukebox_rgb: ffffff

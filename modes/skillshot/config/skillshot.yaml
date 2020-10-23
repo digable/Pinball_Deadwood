@@ -13,8 +13,8 @@ shots:
         switch: s_target_jukebox
         profile: skill_shot_profile
         advance_events: mode_skillshot_started
-        # show_tokens:
-        #     light: l_lane_l
+        show_tokens:
+            light: l_jukebox_rgb
     # skill_2:
     #     switch: s_target_jukebox
     #     profile: skill_shot_profile

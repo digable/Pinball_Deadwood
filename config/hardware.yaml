@@ -197,7 +197,7 @@ lights:
     l_jukebox_rgb:
         number: 1-0-1-2
         platform_settings:
-            polarity: False
+            polarity: True
 
 light_settings:
    default_fade_ms: 40

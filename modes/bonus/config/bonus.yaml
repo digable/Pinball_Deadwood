@@ -5,10 +5,13 @@ mode_settings:
   hurry_up_delay_ms: 0
   bonus_entries:
     - event: bonus_complete_spins
-      score: 200
-      player_score_entry: (device.counters.spins_counter.value)
+      score: current_player.completed_spins * 200
+    #   player_score_entry: (device.counters.spins_counter.value)
     # - event: bonus_dropbanks
     #   score: player.counters.dropbank_completions.value * 20
+      skip_if_zero: false
+      player_score_entry: spins
+      reset_player_score_entry: True
 
 slides:
   bonus_start_slide:
@@ -32,9 +35,9 @@ slides:
         anchor_x: center
         anchor_y: center
       - type: text
-        text: (player|spins_counter)
+        text: (player|completed_spins)
         number_grouping: true
-        min_digits: 2
+        min_digits: 1
         font_size: 60
         bold: true
         anchor_x: center

@@ -104,7 +104,7 @@ timers:
 
 state_machines:
    skill_shot_success:
-        debug: True
+        # debug: True
         states:
             start:
                 label: Skillshot ready

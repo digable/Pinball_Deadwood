@@ -1,10 +1,10 @@
 #config_version=5
 
 mode:
-    start_events: s_plunger_lane_active
+    start_events: ball_starting
     stop_events:
         - ball_drain
-    priority: 501
+    priority: 500
 #s_drop_target_left
 
 shots:

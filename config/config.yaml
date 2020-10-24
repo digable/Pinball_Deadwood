@@ -13,7 +13,7 @@ config:
 - styles.yaml
 - shots.yaml
 - timers.yaml
-
+- variables
 - keyboard.yaml
 
 modes:
@@ -23,6 +23,8 @@ modes:
 - skillshot
 - game_room
 - varitarget
+- spinning
+- bonus
 
 #INFO: bootup mode
 slides:

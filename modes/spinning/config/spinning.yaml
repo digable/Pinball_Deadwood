@@ -1,0 +1,33 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  priority: 500
+# # accruals:
+# #   completed_spins:
+# #     events:
+# #       - s_spinner_active
+# # #       - robo_lanes_shots_lit_complete
+# # #       - tech_lanes_shots_lit_complete
+# #     events_when_complete: increment_completed_spins #, light_bonus_2x_led
+# #     start_enabled: True
+
+# counters:
+#   spins_counter:
+#     count_events: s_spinner_active
+#     reset_on_complete: false
+#     # direction: up
+#     events_when_complete: increment_completed_spins
+#     count_complete_value: 10
+#     # persist_state: true
+
+# variable_player:
+#   # mode_spinning_started:
+
+#   increment_completed_spins:
+#     completed_spins: 1
+
+
+#   # spinner_rotations == 10, increment completed spins, reset to 0 for spinner rotations
+#   # score_something:
+#   #   score: 100 * current_player.completed_spins

@@ -24,6 +24,8 @@ high_score:
       - HIGH SCORE 8
   - loops:
       - LOOP CHAMP
+  - spins:
+      - SPIN CHAMP
 
   # set the defaults
   defaults:
@@ -39,6 +41,8 @@ high_score:
       - ANT: 2
     loops:
       - JAN: 1
+    spins:
+      - COO: 1
 
 # optional: change the slides (you can omit all the following)
 slide_player:

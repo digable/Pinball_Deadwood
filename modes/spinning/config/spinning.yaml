@@ -13,7 +13,7 @@ counters:
     count_complete_value: 10
     direction: up
     events_when_complete: increment_completed_spins
-    persist_state: True
+    persist_state: False
 
 variable_player:
   increment_completed_spins:

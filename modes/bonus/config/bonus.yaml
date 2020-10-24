@@ -6,24 +6,18 @@ mode_settings:
   bonus_entries:
     - event: bonus_complete_spins
       score: current_player.completed_spins * 200
-    #   player_score_entry: (device.counters.spins_counter.value)
-    # - event: bonus_dropbanks
-    #   score: player.counters.dropbank_completions.value * 20
-      skip_if_zero: false
       player_score_entry: spins
-      reset_player_score_entry: True
+      reset_player_score_entry: False
 
 slides:
   bonus_start_slide:
     widgets:
       - type: text
         text: Bonus
-        font_size: 60
+        font_size: 150
         bold: true
         anchor_x: center
         anchor_y: center
-        # x: center
-        # y: top-100
   bonus_complete_spins_slide:
     widgets:
       - type: Text
@@ -35,7 +29,7 @@ slides:
         anchor_x: center
         anchor_y: center
       - type: text
-        text: (player|completed_spins)
+        text: (player|completed_spins) @ 200
         number_grouping: true
         min_digits: 1
         font_size: 60
@@ -43,8 +37,6 @@ slides:
         anchor_x: center
         anchor_y: center
         y: center-100
-        # x: center
-        # y: top-100
   # bonus_game_room_dropbanks_slide:
   #   widgets:
   #     - type: Text
@@ -90,6 +82,7 @@ slides:
 
 slide_player:
   mode_bonus_started: bonus_start_slide
-  bonus_complete_spins{player.counters.spins_counter.value>0}: bonus_complete_spins_slide
+  # bonus_complete_spins{current_player.completed_spins>0}: bonus_complete_spins_slide
+  bonus_complete_spins: bonus_complete_spins_slide
   # bonus_game_room_dropbanks: bonus_game_room_dropbanks_slide
   bonus_total: bonus_total_slide

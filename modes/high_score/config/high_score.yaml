@@ -18,10 +18,10 @@ high_score:
       - HIGH SCORE 2
       - HIGH SCORE 3
       - HIGH SCORE 4
-      - HIGH SCORE 5
-      - HIGH SCORE 6
-      - HIGH SCORE 7
-      - HIGH SCORE 8
+      # - HIGH SCORE 5
+      # - HIGH SCORE 6
+      # - HIGH SCORE 7
+      # - HIGH SCORE 8
   - loops:
       - LOOP CHAMP
   - spins:
@@ -35,10 +35,10 @@ high_score:
       - JAN: 8
       - QUI: 7
       - MAR: 6
-      - JOH: 5
-      - ELI: 4
-      - MIK: 3
-      - ANT: 2
+      # - JOH: 5
+      # - ELI: 4
+      # - MIK: 3
+      # - ANT: 2
     loops:
       - JAN: 1
     spins:

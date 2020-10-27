@@ -17,7 +17,7 @@ variable_player:
 
 # TODO: mode_skillshot_(ended or failed), need to change the scoring
   s_spinner_active:
-    spinner_rotations: 1
+    # spinner_rotations: 1
     score: 5
   s_target_jukebox_active:
     score: 5
@@ -59,9 +59,9 @@ variable_player:
 
 slide_player:
   skill_success: skill_success_slide
-  
-sound_player:
-  ball_ending:
-    sfx_ball_drain:
-      action: play
-      loops: 0
+    
+# sound_player:
+#   ball_ending:
+#     sfx_ball_drain:
+#       action: play
+#       loops: 0

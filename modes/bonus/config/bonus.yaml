@@ -86,3 +86,9 @@ slide_player:
   bonus_complete_spins: bonus_complete_spins_slide
   # bonus_game_room_dropbanks: bonus_game_room_dropbanks_slide
   bonus_total: bonus_total_slide
+
+sound_player:
+  mode_bonus_started:
+    sfx_ball_drain:
+      action: play
+      loops: 0

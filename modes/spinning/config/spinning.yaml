@@ -10,7 +10,7 @@ counters:
     reset_on_complete: True
     disable_on_complete: False
     starting_count: 0
-    count_complete_value: 10
+    count_complete_value: 25
     direction: up
     events_when_complete: increment_completed_spins, got_a_spin
     persist_state: False
@@ -27,5 +27,5 @@ slides:
     widgets:
       - type: video
         video: got_a_spin
-        end_behavior: stop
-    expire: 1s
+        end_behavior: loop
+    expire: 3s

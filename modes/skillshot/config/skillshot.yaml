@@ -101,7 +101,6 @@ timers:
     - action: restart
       event: balldevice_bd_plunger_ball_eject_success #INFO: plunger device
       
-
 state_machines:
    skill_shot_success:
         # debug: True

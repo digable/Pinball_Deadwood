@@ -119,6 +119,10 @@ sounds:
         file: belch.ogg
         volume: 0.75
         track: sfx
+    sfx_chug:
+        file: vari_chug.ogg
+        volume: 0.75
+        track: sfx
     voice_laugh:
         file: tilt_laugh.ogg
         volume: 0.75

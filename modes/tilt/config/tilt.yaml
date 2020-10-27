@@ -1,5 +1,12 @@
 #config_version=5
 
+
+tilt:
+  #INFO: the following are the defaults only copy those if you want to change them
+  multiple_hit_window: 2s
+  settle_time: 7s
+  warnings_to_tilt: 3
+
 slides:
   _overwrite: true
   tilt_warning_1:
@@ -34,9 +41,3 @@ sound_player:
       voice_laugh:
           action: play
           loops: 0
-
-tilt:
-  #INFO: the following are the defaults only copy those if you want to change them
-  multiple_hit_window: 2s
-  settle_time: 7s
-  warnings_to_tilt: 3

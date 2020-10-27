@@ -68,6 +68,14 @@ sounds:
         priority: 100
         about_to_finish_time: 2s
         events_when_about_to_finish: song_02_about_to_finish
+    song_enter_initials:
+        file: enter_initials.ogg
+        volume: 1.0
+        track: music
+        priority: 100
+        about_to_finish_time: 2s
+        events_when_about_to_finish: song_enter_initials
+        mode_end_action: stop
     sfx_fan:
         file: fan.ogg
         volume: 0.75
@@ -107,6 +115,10 @@ sounds:
         file: skill_fail.ogg
         volume: 0.75
         track: sfx
+    sfx_belch:
+        file: belch.ogg
+        volume: 0.75
+        track: sfx
     voice_laugh:
         file: tilt_laugh.ogg
         volume: 0.75
@@ -117,6 +129,22 @@ sounds:
         track: voice
     voice_skill:
         file: skill.ogg
+        vloume: 0.75
+        track: voice
+    voice_add_player_1:
+        file: add_player_1.ogg
+        vloume: 0.75
+        track: voice
+    voice_add_player_2:
+        file: add_player_2.ogg
+        vloume: 0.75
+        track: voice
+    voice_add_player_3:
+        file: add_player_3.ogg
+        vloume: 0.75
+        track: voice
+    voice_add_player_4:
+        file: add_player_4.ogg
         vloume: 0.75
         track: voice
 

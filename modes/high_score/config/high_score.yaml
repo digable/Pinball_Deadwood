@@ -44,6 +44,12 @@ high_score:
     spins:
       - COO: 1
 
+sound_player:
+  high_score_enter_initials:
+    song_enter_initials:
+      action: play
+      loops: 0
+
 # optional: change the slides (you can omit all the following)
 slide_player:
   _overwrite: True

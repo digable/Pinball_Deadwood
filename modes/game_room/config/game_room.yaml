@@ -30,6 +30,7 @@ shot_groups:
         shots: coin1, coin2 #, game_room_door
         reset_events:
         - drop_target_game_room_door_down
+        - player_turn_ending
 
 shot_profiles:
     game_room_profile:

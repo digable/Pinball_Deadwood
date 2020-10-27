@@ -13,18 +13,14 @@ high_score:
   # define your high score categories and the awards
   categories: !!omap
   - score:
-      - GRAND CHAMPION
-      - HIGH SCORE 1
-      - HIGH SCORE 2
-      - HIGH SCORE 3
-      - HIGH SCORE 4
-      # - HIGH SCORE 5
-      # - HIGH SCORE 6
-      # - HIGH SCORE 7
-      # - HIGH SCORE 8
+      - GRAND DRUNKARD
+      - TOP DRUNKARD 1
+      - TOP DRUNKARD 2
+      - TOP DRUNKARD 3
+      - TOP DRUNKARD 4
   - loops:
       - LOOP CHAMP
-  - spins:
+  - completed_spins:
       - SPIN CHAMP
 
   # set the defaults
@@ -35,13 +31,9 @@ high_score:
       - JAN: 8
       - QUI: 7
       - MAR: 6
-      # - JOH: 5
-      # - ELI: 4
-      # - MIK: 3
-      # - ANT: 2
     loops:
       - JAN: 1
-    spins:
+    completed_spins:
       - COO: 1
 
 sound_player:
@@ -172,4 +164,4 @@ slides:
     color: 4040FF
     font_size: 125
     number_grouping: true
-    min_digits: 2
+    min_digits: 1

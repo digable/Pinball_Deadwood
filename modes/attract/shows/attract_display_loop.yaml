@@ -36,7 +36,7 @@
          duration: 1s
          direction: top
 
-- duration: 10s
+- duration: 5s
   slides:
     show_high_scores:
         widgets:
@@ -85,25 +85,58 @@
           style: attract_mode_high_score_display_score
           y: top-280
         - type: Text
+          text: (machine|score4_label)
+          style: attract_mode_high_score_display_label
+          y: top-320
+        - type: Text
+          text: (machine|score4_name)
+          style: attract_mode_high_score_display_name
+          y: top-320
+        - type: Text
+          text: (machine|score4_value)
+          style: attract_mode_high_score_display_score
+          y: top-320
+        - type: Text
+          text: (machine|score5_label)
+          style: attract_mode_high_score_display_label
+          y: top-360
+        - type: Text
+          text: (machine|score5_name)
+          style: attract_mode_high_score_display_name
+          y: top-360
+        - type: Text
+          text: (machine|score5_value)
+          style: attract_mode_high_score_display_score
+          y: top-360
+        transition:
+          type: move_in
+          duration: 1s
+          direction: left
+
+- duration: 3s
+  slides:
+    loop_champ_slide:
+        widgets:
+        - type: Text
           text: LOOP CHAMPION
           font_size: 60
           bold: true
           anchor_x: center
           anchor_y: center
           x: center
-          y: top-500
+          y: top-100
         - type: Text
           text: (machine|loops1_label)
           style: attract_mode_high_score_display_label
-          y: top-600
+          y: top-200
         - type: Text
           text: (machine|loops1_name)
           style: attract_mode_high_score_display_name
-          y: top-600
+          y: top-200
         - type: Text
           text: (machine|loops1_value)
           style: attract_mode_high_score_display_score
-          y: top-600
+          y: top-200
         - type: Text
           text: (machine|credits_string)
           color: green
@@ -113,7 +146,40 @@
           duration: 1s
           direction: left
 
-- duration: 10s
+- duration: 3s
+  slides:
+    loop_champ_slide:
+        widgets:
+        - type: Text
+          text: SPIN CHAMPION
+          font_size: 60
+          bold: true
+          anchor_x: center
+          anchor_y: center
+          x: center
+          y: top-100
+        - type: Text
+          text: (machine|completed_spins1_label)
+          style: attract_mode_high_score_display_label
+          y: top-200
+        - type: Text
+          text: (machine|completed_spins1_name)
+          style: attract_mode_high_score_display_name
+          y: top-200
+        - type: Text
+          text: (machine|completed_spins1_value)
+          style: attract_mode_high_score_display_score
+          y: top-200
+        - type: Text
+          text: (machine|credits_string)
+          color: green
+          style: base_ball_display
+        transition:
+          type: move_in
+          duration: 1s
+          direction: left
+
+- duration: 5s
   slides:
     last_game_score_slide:
       widgets:

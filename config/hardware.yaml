@@ -192,6 +192,7 @@ drop_target_banks:
           ball_started.2: 1s
           ball_started.3: 2s
           machine_reset_phase_3: 0
+          player_turn_started: 1s
 
 lights:
     l_jukebox_rgb:

@@ -130,19 +130,19 @@ sounds:
         track: voice
     voice_add_player_1:
         file: add_player_1.ogg
-        vloume: 0.75
+        vloume: 1
         track: voice
     voice_add_player_2:
         file: add_player_2.ogg
-        vloume: 0.75
+        vloume: 1
         track: voice
     voice_add_player_3:
         file: add_player_3.ogg
-        vloume: 0.75
+        vloume: 1
         track: voice
     voice_add_player_4:
         file: add_player_4.ogg
-        vloume: 0.75
+        vloume: 1
         track: voice
 
 track_player:

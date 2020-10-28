@@ -58,6 +58,9 @@ keyboard:
     o:
         switch: s_varitarget_7
 
+    d:
+        switch: s_popbumper
+
     l:
         switch: s_launch_button
     b:

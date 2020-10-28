@@ -46,6 +46,9 @@ variable_player:
   s_varitarget_7_active:
     score: 40
 
+  s_popbumper_active:
+    score: 25
+
 # event_player:
 #   flipper_cardle_active:
 #       score: -12

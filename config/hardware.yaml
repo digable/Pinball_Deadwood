@@ -89,6 +89,9 @@ switches:
     s_varitarget_7:
         number: A1-B0-7
 
+    s_popbumper:
+        number: A0-B1-5
+
     s_tilt:
         number: A0-B1-3
         tags: tilt_warning
@@ -131,6 +134,10 @@ coils:
         number: A2-B0-0
     c_dummy_2:
         number: A2-B1-0
+
+    c_popbumper:
+        number: A0-B0-4
+        default_pulse_ms: 23
 
 autofire_coils:
     left_slingshot:
@@ -197,6 +204,10 @@ drop_target_banks:
 lights:
     l_jukebox_rgb:
         number: 1-0-1-2
+        platform_settings:
+            polarity: True
+    l_popbumper_rgb:
+        number: 1-24-25-26
         platform_settings:
             polarity: True
 

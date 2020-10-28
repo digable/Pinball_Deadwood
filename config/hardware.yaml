@@ -1,5 +1,12 @@
 #config_version=5
 
+# mpf:
+#     default_pulse_ms: 20
+
+game:
+    balls_per_game: 3
+    max_players: 4
+
 machine:
   balls_installed: 4
 
@@ -45,13 +52,6 @@ switches:
         number: A0-B1-1
         tags: start
 
-#INFO: only there to show playfield active, once more switches are on the playfield this will not be necessary
-#INFO:START only needed for virtual
-    # s_right_inlane:
-    #     number: A1-B1-2
-    #     tags: playfield_active
-#INFO:STOP only needed for virtual
-
     s_left_slingshot:
         number: A0-B0-6
     s_right_slingshot:
@@ -62,6 +62,36 @@ switches:
     s_target_jukebox:
         number: A0-B1-6
 
+    s_drop_target_left:
+        number: A1-B1-0
+        type: NC
+    s_drop_target_middle:
+        number: A1-B1-1
+        type: NC
+    s_drop_target_right: #INFO: game room entrance
+        number: A1-B1-2
+        type: NC
+
+    s_varitarget_0:
+        number: A1-B0-0
+    s_varitarget_1:
+        number: A1-B0-1
+    s_varitarget_2:
+        number: A1-B0-2
+    s_varitarget_3:
+        number: A1-B0-3
+    s_varitarget_4:
+        number: A1-B0-4
+    s_varitarget_5:
+        number: A1-B0-5
+    s_varitarget_6:
+        number: A1-B0-6
+    s_varitarget_7:
+        number: A1-B0-7
+
+    s_popbumper:
+        number: A0-B1-5
+
     s_tilt:
         number: A0-B1-3
         tags: tilt_warning
@@ -69,13 +99,13 @@ switches:
 coils:    
     c_flipper_left_main:
         number: A0-B1-2
-        default_pulse_ms: 30
+        default_pulse_ms: 25
     c_flipper_left_hold:
         number: A0-B1-3
         allow_enable: true
     c_flipper_right_main:
         number: A0-B0-1
-        default_pulse_ms: 30
+        default_pulse_ms: 25
     c_flipper_right_hold:
         number: A0-B0-2
         allow_enable: true
@@ -90,10 +120,24 @@ coils:
 
     c_left_slingshot:
         number: A0-B1-1
-        default_pulse_ms: 10
+        default_pulse_ms: 7
     c_right_slingshot:
         number: A0-B1-0
-        default_pulse_ms: 10
+        default_pulse_ms: 7
+    c_drop_target_reset:
+        number: A0-B1-4
+        default_pulse_ms: 60
+    c_varitarget_reset:
+        number: A0-B1-5
+        default_pulse_ms: 30
+    c_dummy_1:
+        number: A2-B0-0
+    c_dummy_2:
+        number: A2-B1-0
+
+    c_popbumper:
+        number: A0-B0-4
+        default_pulse_ms: 25
 
 autofire_coils:
     left_slingshot:
@@ -102,6 +146,9 @@ autofire_coils:
     right_slingshot:
         coil: c_right_slingshot
         switch: s_right_slingshot
+    ac_popbumper:
+        coil: c_popbumper
+        switch: s_popbumper
 
 ball_devices:
     bd_trough:
@@ -137,4 +184,35 @@ flippers:
         hold_coil: c_flipper_right_hold
         activation_switch: s_right_flipper
 
+drop_targets:
+    coin1:
+        switch: s_drop_target_left
+    coin2:
+        switch: s_drop_target_middle
+    game_room_door:
+        switch: s_drop_target_right
 
+drop_target_banks:
+    game_room:
+        drop_targets: coin1, coin2, game_room_door
+        reset_coils: c_drop_target_reset
+        reset_on_complete: 1s
+        reset_events:
+          ball_started.1: 0
+          ball_started.2: 1s
+          ball_started.3: 2s
+          machine_reset_phase_3: 0
+          player_turn_started: 1s
+
+lights:
+    l_jukebox_rgb:
+        number: 1-0-1-2
+        platform_settings:
+            polarity: True
+    l_popbumper_rgb:
+        number: 1-24-25-26
+        platform_settings:
+            polarity: True
+
+light_settings:
+   default_fade_ms: 40

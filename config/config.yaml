@@ -10,28 +10,30 @@ config:
 # - hardware_virtual.yaml #INFO: UNcomment for virtual
 - assets.yaml
 - sounds.yaml
+- styles.yaml
 - shots.yaml
 - timers.yaml
-
+- variables
 - keyboard.yaml
 
 modes:
 - base
+- high_score
 - tilt
 - skillshot
+- game_room
+- varitarget
+- spinning
+- bonus
 
-#INFO: bootup and start modes
+#INFO: bootup mode
 slides:
     welcome_slide:
         widgets:
               - type: image
                 image: ZukiDogLogo
-    attract_started:
-        widgets:
-              - type: video
-                video: attract_deadwood
-                end_behavior: loop
 slide_player:
     init_done: welcome_slide
-    mode_attract_started: attract_started
-
+#     mode_attract_started:
+#         welcome_slide:
+#             action: remove

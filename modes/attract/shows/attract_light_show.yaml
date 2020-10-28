@@ -1,0 +1,30 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_jukebox_rgb: ff0000
+    l_popbumper_rgb: ff0000
+
+- duration: 1
+  lights:
+    l_jukebox_rgb: 00ff00
+    l_popbumper_rgb: 00ff00
+
+- duration: 1
+  lights:
+    l_jukebox_rgb: 0000ff
+    l_popbumper_rgb: 0000ff
+
+- duration: 1
+  lights:
+    l_jukebox_rgb: ffa500
+    l_popbumper_rgb: ffa500
+
+- duration: 1
+  lights:
+    l_jukebox_rgb: ff00ff
+    l_popbumper_rgb: ff00ff
+
+- duration: 1
+  lights:
+    l_jukebox_rgb: ffffff
+    l_popbumper_rgb: ffffff

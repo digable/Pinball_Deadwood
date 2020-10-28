@@ -1,23 +1,7 @@
-autofire:
-  left_slingshot:
-    x: 0.2417027417027417
-    y: 0.6717171717171717
-    device_size: 0.02
-  right_slingshot:
-    x: 0.6709956709956709
-    y: 0.6632996632996633
-    device_size: 0.02
-ball_device:
-  bd_trough:
-    x: 0.5555555555555555
-    y: 0.8821548821548821
-    device_size: 0.02
-flipper:
-  left_flipper:
-    x: 0.30663780663780665
-    y: 0.7811447811447811
-    device_size: 0.02
-  right_flipper:
-    x: 0.5952380952380951
-    y: 0.7861952861952862
-    device_size: 0.02
+light:
+  l_jukebox_rgb:
+    x: 0.09379509379509378
+    y: 0.3838383838383838
+  l_popbumper_rgb:
+    x: 0.8152958152958153
+    y: 0.4898989898989899

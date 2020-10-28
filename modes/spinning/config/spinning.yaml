@@ -1,0 +1,31 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  priority: 500
+
+counters:
+  spins_counter:
+    count_events: s_spinner_active
+    reset_on_complete: True
+    disable_on_complete: False
+    starting_count: 0
+    count_complete_value: 25
+    direction: up
+    events_when_complete: increment_completed_spins, got_a_spin
+    persist_state: False
+
+variable_player:
+  increment_completed_spins:
+    completed_spins: 1
+
+slide_player:
+  got_a_spin: got_a_spin_slide
+
+slides:
+  got_a_spin_slide:
+    widgets:
+      - type: video
+        video: got_a_spin
+        end_behavior: loop
+    expire: 3s

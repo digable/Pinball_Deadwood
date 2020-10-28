@@ -1,7 +1,7 @@
 #config_version=5
 
 mode:
-    start_events: ball_started
+    start_events: s_plunger_lane_active
     stop_events:
         - skill_success
         - skill_failed
@@ -13,8 +13,8 @@ shots:
         switch: s_target_jukebox
         profile: skill_shot_profile
         advance_events: mode_skillshot_started
-        # show_tokens:
-        #     light: l_lane_l
+        show_tokens:
+            light: l_jukebox_rgb
     # skill_2:
     #     switch: s_target_jukebox
     #     profile: skill_shot_profile
@@ -53,14 +53,18 @@ shot_profiles:
 variable_player:
   skill_success:
     score: 37
+  timer_skill_shot_timeout_tick:
+    skill_shot_timeout_variable:
+      int: device.timers.skill_shot_timeout.ticks
+      action: set
 
 sound_player:
   skill_success:
-      voice_skill:
-          action: play
-          loops: 0
+    voice_skill:
+      action: play
+      loops: 0
   skill_failed:
-    sfx_bar_noise:
+    sfx_skill_fail:
       action: play
       loops: 0
 
@@ -72,14 +76,24 @@ slides:
         video: skill
         end_behavior: stop
     expire: 2s
+    # transition:
+    #   type: wipe
+    #   duration: 2s
+    #   direction: right
+    # transition_out:
+    #   type: fade_away
+  show_timer_skillshot:
+    widgets:
+    - type: Text
+      text: (player|skill_shot_timeout_variable)
 
 # slide_player:
-  # skill_success:  skill_success_slide
+#   skill_success:  skill_success_slide
 
 timers:
   skill_shot_timeout:
     start_value: 5
-    end_value: 0 #INFO: timeout of skillshot
+    end_value: -1 #INFO: timeout of skillshot
     direction: down
     tick_interval: 1s
     start_running: false
@@ -87,10 +101,9 @@ timers:
     - action: restart
       event: balldevice_bd_plunger_ball_eject_success #INFO: plunger device
       
-
 state_machines:
    skill_shot_success:
-        debug: True
+        # debug: True
         states:
             start:
                 label: Skillshot ready

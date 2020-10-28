@@ -31,13 +31,6 @@ sound_player:
         sfx_coin:
             action: play
             loops: 0
-    mode_attract_started:
-        song_attract:
-            action: play
-            loops: -1
-    mode_attract_stopped:
-        song_attract:
-            action: stop
     mode_base_started:
         song_01:
             action: play
@@ -68,6 +61,14 @@ sounds:
         priority: 100
         about_to_finish_time: 2s
         events_when_about_to_finish: song_02_about_to_finish
+    song_enter_initials:
+        file: enter_initials.ogg
+        volume: 1.0
+        track: music
+        priority: 100
+        about_to_finish_time: 2s
+        events_when_about_to_finish: song_enter_initials
+        mode_end_action: stop
     sfx_fan:
         file: fan.ogg
         volume: 0.75
@@ -99,17 +100,49 @@ sounds:
         file: bar_noise.ogg
         volume: 0.4
         track: sfx
+    sfx_ball_drain:
+        file: ball_drain.ogg
+        volume: 0.75
+        track: sfx
+    sfx_skill_fail:
+        file: skill_fail.ogg
+        volume: 0.75
+        track: sfx
+    sfx_belch:
+        file: belch.ogg
+        volume: 0.75
+        track: sfx
+    sfx_chug:
+        file: vari_chug.ogg
+        volume: 0.75
+        track: sfx
     voice_laugh:
         file: tilt_laugh.ogg
         volume: 0.75
         track: voice
-    voice_ball_drain:
-        file: ball_drain.ogg
+    voice_awe:
+        file: awe.ogg
         volume: 0.75
         track: voice
     voice_skill:
         file: skill.ogg
         vloume: 0.75
+        track: voice
+    voice_add_player_1:
+        file: add_player_1.ogg
+        vloume: 1
+        track: voice
+    voice_add_player_2:
+        file: add_player_2.ogg
+        vloume: 1
+        track: voice
+    voice_add_player_3:
+        file: add_player_3.ogg
+        vloume: 1
+        track: voice
+    voice_add_player_4:
+        file: add_player_4.ogg
+        vloume: 1
         track: voice
 
 track_player:

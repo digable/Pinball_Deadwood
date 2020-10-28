@@ -1,0 +1,47 @@
+#config_version=5
+
+mode:
+    start_events: ball_starting
+    stop_events:
+        - ball_drain
+    priority: 500
+#s_drop_target_left
+
+shots:
+    coin1:
+        switch: s_drop_target_left
+        profile: game_room_profile
+        # advance_events: mode_game_room_started
+        # show_tokens:
+        #     light: l_lane_l
+    coin2:
+        switch: s_drop_target_middle
+        profile: game_room_profile
+        # show_tokens:
+        #     light: l_lane_m
+    game_room_door:
+        switch: s_drop_target_right
+        profile: game_room_profile
+        # show_tokens:
+        #     light: l_lane_r
+
+shot_groups:
+    get_coins:
+        shots: coin1, coin2 #, game_room_door
+        reset_events:
+        - drop_target_game_room_door_down
+        # - player_turn_ending
+
+shot_profiles:
+    game_room_profile:
+        states:
+         - name: unlit
+           show: off
+         - name: flashing
+           show: flash_color
+           show_tokens:
+             color: red
+           speed: 4
+         - name: lit
+           show: on
+        loop: yes

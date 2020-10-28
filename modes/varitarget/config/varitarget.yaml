@@ -1,0 +1,142 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  priority: 500
+
+event_player:
+  mode_varitarget_started: reset_varitarget
+  s_varitarget_1_active: varitarget_level_1_reached
+  s_varitarget_2_active: varitarget_level_2_reached
+  s_varitarget_3_active: varitarget_level_3_reached
+  s_varitarget_4_active: varitarget_level_4_reached
+  s_varitarget_5_active: varitarget_level_5_reached
+  s_varitarget_6_active: varitarget_level_6_reached
+  # varitarget_maxed: varitarget_level_6_reached
+  # varitarget_maxed{current_player.varitarget_use10s_delay<=0}: reset_varitarget|1000ms
+  # varitarget_maxed{current_player.varitarget_use10s_delay>=1}: reset_varitarget|10000ms
+  # varitarget_register: reset_varitarget
+
+  reset_varitarget:
+    - stop_varitarget_shows|250ms
+    - block_varitarget_shows|250ms
+    - unblock_varitarget_shows|250ms
+  
+
+timed_switches:
+    varitarget_register:
+      switches: s_varitarget_1, s_varitarget_2, s_varitarget_3, s_varitarget_4, s_varitarget_5, s_varitarget_6
+      time: 1s
+      events_when_active: reset_varitarget
+
+sound_player:
+  varitarget_level_1_reached:
+    sfx_chug:
+      action: play
+      loops: 0
+  varitarget_level_2_reached:
+    sfx_chug:
+      action: play
+      loops: 0
+  varitarget_level_3_reached:
+    sfx_chug:
+      action: play
+      loops: 0
+  varitarget_level_4_reached:
+    sfx_chug:
+      action: play
+      loops: 0
+  varitarget_level_5_reached:
+    sfx_chug:
+      action: play
+      loops: 0
+  varitarget_level_6_reached:
+    sfx_belch:
+      action: play
+      loops: 0
+
+  # varitarget_level_1_reached{current_player.varitarget_block_playing_shows==0}: stop_varitarget_shows, play_varitarget_show_1|10ms
+  # varitarget_level_2_reached{current_player.varitarget_block_playing_shows==0}: stop_varitarget_shows, play_varitarget_show_2|10ms
+  # varitarget_level_3_reached{current_player.varitarget_block_playing_shows==0}: stop_varitarget_shows, play_varitarget_show_3|10ms
+  # varitarget_level_4_reached{current_player.varitarget_block_playing_shows==0}: stop_varitarget_shows, play_varitarget_show_4|10ms
+  # varitarget_level_5_reached{current_player.varitarget_block_playing_shows==0}: stop_varitarget_shows, play_varitarget_show_5|10ms
+  # varitarget_level_6_reached: reset_varitarget
+
+# show_player:
+#   stop_varitarget_shows:
+#     vari_target_schwartz_level_1: stop
+#     vari_target_schwartz_level_2: stop
+#     vari_target_schwartz_level_3: stop
+#     vari_target_schwartz_level_4: stop
+#     vari_target_schwartz_level_5: stop
+#     vari_target_schwartz_level_6: stop
+#   play_varitarget_show_1:
+#     vari_target_schwartz_level_1:
+#       loops: -1
+#   play_varitarget_show_2:
+#     vari_target_schwartz_level_2:
+#       loops: -1
+#   play_varitarget_show_3:
+#     vari_target_schwartz_level_3:
+#       loops: -1
+#   play_varitarget_show_4:
+#     vari_target_schwartz_level_4:
+#       loops: -1
+#   play_varitarget_show_5:
+#     vari_target_schwartz_level_5:
+#       loops: -1
+#   play_varitarget_show_6:
+#     vari_target_schwartz_level_6:
+#       loops: -1
+
+
+variable_player:
+   varitarget_use_10s_reset_delay:
+     varitarget_use10s_delay:
+       action: set
+       int: 1
+   varitarget_use_standard_reset_delay:
+     varitarget_use10s_delay:
+       action: set
+       int: 0
+   unblock_varitarget_shows:
+     varitarget_block_playing_shows:
+       action: set
+       int: 0
+   block_varitarget_shows:
+     varitarget_block_playing_shows:
+       action: set
+       int: 1
+  #  s_schwartz_power_1_active:
+  #    varitarget_current_level:
+  #      action: set
+  #      int: 1
+  #  s_schwartz_power_2_active:
+  #    varitarget_current_level:
+  #      action: set
+  #      int: 2
+  #  s_schwartz_power_3_active:
+  #    varitarget_current_level:
+  #      action: set
+  #      int: 3
+  #  s_schwartz_power_4_active:
+  #    varitarget_current_level:
+  #      action: set
+  #      int: 4
+  #  s_schwartz_power_5_active:
+  #    varitarget_current_level:
+  #      action: set
+  #      int: 5
+  #  s_schwartz_power_6_active:
+  #    varitarget_current_level:
+  #      action: set
+  #      int: 6
+  #  s_schwartz_power_7_active:
+  #    varitarget_current_level:
+  #      action: set
+  #      int: 7
+
+coil_player:
+  reset_varitarget:
+    c_varitarget_reset:
+      pulse_ms: 250

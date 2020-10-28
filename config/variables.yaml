@@ -1,0 +1,7 @@
+#config_version=5
+
+player_vars:
+  #INFO: mode --> spinning
+  completed_spins:
+    value_type: int
+    initial_value: 0

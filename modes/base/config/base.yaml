@@ -10,38 +10,61 @@ variable_player:
   s_right_slingshot_active:
     score: 20
 
-  s_left_flipper_active:
-    score: -5
-  s_right_flipper_active:
-    score: -5
+  # s_left_flipper_active:
+  #   score: -5
+  # s_right_flipper_active:
+  #   score: -5
 
 # TODO: mode_skillshot_(ended or failed), need to change the scoring
   s_spinner_active:
-    spinner_rotations: 1
+    # spinner_rotations: 1
     score: 5
   s_target_jukebox_active:
     score: 5
 
+  s_drop_target_left_active:
+    score: 25
+  s_drop_target_middle_active:
+    score: 25
+  s_drop_target_right_active:
+    score: 25
+  
+  # s_varitarget_0_active:
+    # score: 5
+  s_varitarget_1_active:
+    score: 10
+  s_varitarget_2_active:
+    score: 15
+  s_varitarget_3_active:
+    score: 20
+  s_varitarget_4_active:
+    score: 25
+  s_varitarget_5_active:
+    score: 30
+  s_varitarget_6_active:
+    score: 35
+  s_varitarget_7_active:
+    score: 40
+
+  s_popbumper_active:
+    score: 25
+
+# event_player:
+#   flipper_cardle_active:
+#       score: -12
+
+# timed_switches:
+#   flipper_cradle:
+#     switch_tags: left_flipper, right_flipper
+#     time: 3s
+#     events_when_active: flipper_cradle
+#     events_when_released: flipper_cradle_release
+
 slide_player:
-  mode_base_started:
-      widgets:
-        - type: text
-          text: (score)
-          number_grouping: true
-          min_digits: 2
-          font_size: 100
-        - type: text
-          text: Drinker (number)
-          y: 10
-          x: 10
-          font_size: 50
-          anchor_x: left
-          anchor_y: bottom
-        - type: text
-          text: Ball (ball)
-          y: 10
-          x: right-10
-          anchor_x: right
-          anchor_y: bottom
-          font_size: 50
-  skill_success:  skill_success_slide
+  skill_success: skill_success_slide
+    
+# sound_player:
+#   ball_ending:
+#     sfx_ball_drain:
+#       action: play
+#       loops: 0

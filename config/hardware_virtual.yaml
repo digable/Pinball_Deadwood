@@ -1,6 +1,9 @@
 #config_version=5
 
-virtual_platform_start_active_switches: s_trough1, s_trough2, s_trough3
+smart_virtual:
+    file_log: full
+
+virtual_platform_start_active_switches: s_trough1, s_trough2, s_trough3 #, s_drop_target_left, s_drop_target_middle, s_drop_target_right
 
 window:
   fullscreen: false
@@ -12,14 +15,14 @@ keyboard:
 
 switches:
     c_launch_button: 
-        number: A1-B0-6 
+        number: A99-B99-1 
         # default_pulse_ms: 20
     s_launch_button:
-        number: A1-B0-7
+        number: A99-B99-2
 
 #INFO: only there to show playfield active, once more switches are on the playfield this will not be necessary
     s_right_inlane:
-        number: A1-B1-2
+        number: A99-B99-3
         tags: playfield_active
 
     s_left_slingshot:

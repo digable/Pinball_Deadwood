@@ -2,9 +2,11 @@
 
 show_player:
   mode_attract_started: attract_display_loop
+      # shift_left_event: s_left_flipper_active
+      # shift_right_event: s_right_flipper_active
+      # select_event: s_start_active
+
   mode_attract_started.1: attract_light_show
-  # shift_left_event: s_left_flipper_active
-  # shift_right_event: s_right_flipper_active
 
 sound_player:
   mode_attract_started:

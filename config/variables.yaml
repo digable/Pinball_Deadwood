@@ -5,3 +5,6 @@ player_vars:
   completed_spins:
     value_type: int
     initial_value: 0
+  skill_shot_taken:
+    value_type: int
+    initial_value: 0

@@ -5,6 +5,13 @@ mode:
   priority: 100
 
 variable_player:
+#INFO: variables to reset for players after specific events
+  ball_drain:
+    skill_shot_taken:
+      int: 0
+      action: set
+
+#INFO: regular scoring stuff
   s_left_slingshot_active:
     score: 20
   s_right_slingshot_active:

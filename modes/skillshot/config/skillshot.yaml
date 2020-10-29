@@ -1,7 +1,9 @@
 #config_version=5
 
 mode:
-    start_events: s_plunger_lane_active
+    # start_events: s_plunger_lane_active
+    # start_events: ball_starting
+    start_events: plunger_lane_released{current_player.skill_shot_taken == 0}
     stop_events:
         - skill_success
         - skill_failed
@@ -16,10 +18,11 @@ shots:
         show_tokens:
             light: l_jukebox_rgb
     # skill_2:
-    #     switch: s_target_jukebox
+    #     switch: s_popbumper
     #     profile: skill_shot_profile
-    #     # show_tokens:
-    #     #     light: l_lane_m
+    #     advance_events: mode_skillshot_started
+    #     show_tokens:
+    #         light: l_popbumper_rgb
     # skill_3:
     #     switch: s_lane_r
     #     profile: skill_shot_profile
@@ -57,6 +60,14 @@ variable_player:
     skill_shot_timeout_variable:
       int: device.timers.skill_shot_timeout.ticks
       action: set
+  skill_shot_taken_true:
+    skill_shot_taken:
+      int: 1
+      action: set
+  # player_turn_started:
+  #   skill_shot_taken:
+  #     int: 0
+  #     action: set
 
 sound_player:
   skill_success:
@@ -109,10 +120,10 @@ state_machines:
                 label: Skillshot ready
             success:
                 label: Skillshot success
-                events_when_started: skill_success
+                events_when_started: skill_success, skill_shot_taken_true
             failed:
                 label: Skillshot fail
-                events_when_started: skill_failed
+                events_when_started: skill_failed, skill_shot_taken_true
         transitions:
             - source: start
               target: success

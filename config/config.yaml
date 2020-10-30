@@ -20,10 +20,11 @@ modes:
 - base
 - high_score
 - tilt
-- skillshot
-- game_room
+- skill_shot
+- drop_targets
 - varitarget
-- spinning
+- spinner
+- pop_bumper
 - bonus
 
 #INFO: bootup mode

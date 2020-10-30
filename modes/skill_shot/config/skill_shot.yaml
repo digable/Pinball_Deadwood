@@ -14,15 +14,15 @@ shots:
     skill_1:
         switch: s_target_jukebox
         profile: skill_shot_profile
-        advance_events: mode_skillshot_started
+        advance_events: mode_skill_shot_started
         show_tokens:
             light: l_jukebox_rgb
     # skill_2:
-    #     switch: s_popbumper
+    #     switch: s_pop_bumper
     #     profile: skill_shot_profile
-    #     advance_events: mode_skillshot_started
+    #     advance_events: mode_skill_shot_started
     #     show_tokens:
-    #         light: l_popbumper_rgb
+    #         light: l_pop_bumper_rgb
     # skill_3:
     #     switch: s_lane_r
     #     profile: skill_shot_profile
@@ -93,7 +93,7 @@ slides:
     #   direction: right
     # transition_out:
     #   type: fade_away
-  show_timer_skillshot:
+  show_timer_skill_shot:
     widgets:
     - type: Text
       text: (player|skill_shot_timeout_variable)
@@ -104,7 +104,7 @@ slides:
 timers:
   skill_shot_timeout:
     start_value: 5
-    end_value: -1 #INFO: timeout of skillshot
+    end_value: -1 #INFO: timeout of skill_shot
     direction: down
     tick_interval: 1s
     start_running: false
@@ -117,12 +117,12 @@ state_machines:
         # debug: True
         states:
             start:
-                label: Skillshot ready
+                label: skill_shot ready
             success:
-                label: Skillshot success
+                label: skill_shot success
                 events_when_started: skill_success, skill_shot_taken_true
             failed:
-                label: Skillshot fail
+                label: skill_shot fail
                 events_when_started: skill_failed, skill_shot_taken_true
         transitions:
             - source: start

@@ -59,7 +59,7 @@ keyboard:
         switch: s_varitarget_7
 
     d:
-        switch: s_popbumper
+        switch: s_pop_bumper
 
     l:
         switch: s_launch_button

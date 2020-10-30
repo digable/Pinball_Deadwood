@@ -90,7 +90,7 @@ switches:
     s_varitarget_7:
         number: A1-B0-7
 
-    s_popbumper:
+    s_pop_bumper:
         number: A0-B1-5
 
     s_tilt:
@@ -143,7 +143,7 @@ coils:
     c_dummy_2:
         number: A2-B1-0
 
-    c_popbumper:
+    c_pop_bumper:
         number: A0-B0-4
         default_pulse_ms: 25
 
@@ -154,9 +154,9 @@ autofire_coils:
     right_slingshot:
         coil: c_right_slingshot
         switch: s_right_slingshot
-    ac_popbumper:
-        coil: c_popbumper
-        switch: s_popbumper
+    ac_pop_bumper:
+        coil: c_pop_bumper
+        switch: s_pop_bumper
 
 ball_devices:
     bd_trough:
@@ -217,10 +217,12 @@ lights:
         number: 1-0-1-2
         platform_settings:
             polarity: True
-    l_popbumper_rgb:
+        default_on_color: red
+    l_pop_bumper_rgb:
         number: 1-24-25-26
         platform_settings:
             polarity: True
+        default_on_color: white
 
 light_settings:
    default_fade_ms: 40

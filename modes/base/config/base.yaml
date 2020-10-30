@@ -22,7 +22,7 @@ variable_player:
   # s_right_flipper_active:
   #   score: -5
 
-# TODO: mode_skillshot_(ended or failed), need to change the scoring
+# TODO: mode_skill_shot_(ended or failed), need to change the scoring
   s_spinner_active:
     # spinner_rotations: 1
     score: 5
@@ -53,8 +53,10 @@ variable_player:
   s_varitarget_7_active:
     score: 40
 
-  s_popbumper_active:
+  s_pop_bumper_active:
     score: 25
+    # l_pop_bumper_rgb_on
+
 
 # event_player:
 #   flipper_cardle_active:

@@ -223,6 +223,21 @@ lights:
         platform_settings:
             polarity: True
         default_on_color: white
+    l_left_sling_rgb:
+        number: 1-3-4-5
+        platform_settings:
+            polarity: True
+        default_on_color: white
+    l_right_sling_rgb:
+        number: 1-6-7-8
+        platform_settings:
+            polarity: True
+        default_on_color: white
+    l_varitarget_rgb:
+        number: 1-9-10-11
+        platform_settings:
+            polarity: True
+        default_on_color: white
 
 light_settings:
    default_fade_ms: 40

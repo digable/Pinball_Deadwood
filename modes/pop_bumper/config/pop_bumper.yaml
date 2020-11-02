@@ -4,6 +4,12 @@ mode:
   start_events: ball_starting
   priority: 500
 
+sound_player:
+  s_pop_bumper_active:
+    sfx_gun_shot:
+      action: play
+      loops: 0
+
 counters:
   pops_counter:
     count_events: s_pop_bumper_active

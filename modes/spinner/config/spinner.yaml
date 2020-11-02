@@ -4,6 +4,12 @@ mode:
   start_events: ball_starting
   priority: 500
 
+sound_player:
+  s_spinner_active:
+    sfx_hiccuping:
+        action: play
+        loops: 0
+
 counters:
   spins_counter:
     count_events: s_spinner_active

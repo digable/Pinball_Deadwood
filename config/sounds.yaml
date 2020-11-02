@@ -22,23 +22,6 @@ sound_system:
           type: standard
           simultaneous_sounds: 8
 
-sound_player:
-    s_spinner_active:
-        sfx_hiccuping:
-            action: play
-            loops: 0
-    s_target_jukebox_active:
-        sfx_coin:
-            action: play
-            loops: 0
-    mode_base_started:
-        song_01:
-            action: play
-            loops: -1
-    mode_base_stopped:
-        song_01:
-            action: stop
-
 sounds:
     song_attract:
         file: shrunk.ogg
@@ -114,6 +97,18 @@ sounds:
         track: sfx
     sfx_chug:
         file: vari_chug.ogg
+        volume: 0.75
+        track: sfx
+    sfx_gun_shot:
+        file: gun_shot.wav
+        volume: 0.75
+        track: sfx
+    sfx_punch_1:
+        file: punch_1.wav
+        volume: 0.75
+        track: sfx
+    sfx_punch_2:
+        file: punch_2.wav
         volume: 0.75
         track: sfx
     voice_laugh:

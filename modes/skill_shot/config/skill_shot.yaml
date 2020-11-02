@@ -4,6 +4,7 @@ mode:
     # start_events: s_plunger_lane_active
     # start_events: ball_starting
     start_events: plunger_lane_released{current_player.skill_shot_taken == 0}
+    # start_events: skill_shot_select_complete{current_player.skill_shot_taken == 0}
     stop_events:
         - skill_success
         - skill_failed

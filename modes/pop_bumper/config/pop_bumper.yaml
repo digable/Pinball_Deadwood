@@ -35,8 +35,8 @@ shots:
 shot_profiles:
   pop_shot_profile:
     states:
-      - name: unlit
-        show: off
+      # - name: unlit
+      #   show: off
       - name: flashing
         show: flash_color
         show_tokens:

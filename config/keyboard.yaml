@@ -61,6 +61,11 @@ keyboard:
     d:
         switch: s_pop_bumper
 
+    f:
+        switch: s_laser_kick_prox
+    g:
+        switch: s_smart_drop_target
+
     l:
         switch: s_launch_button
     b:

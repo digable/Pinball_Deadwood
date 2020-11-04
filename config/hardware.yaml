@@ -145,8 +145,6 @@ coils:
         number: A0-B1-5
         default_pulse_ms: 30
 
-    c_dummy_1:
-        number: A2-B0-0
     c_dummy_2:
         number: A2-B1-0
 

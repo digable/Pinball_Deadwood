@@ -147,7 +147,7 @@ coils:
         default_pulse_ms: 30
 
     c_dummy_2:
-        number: A1-B1-0
+        number: A2-B1-0
 
     c_pop_bumper:
         number: A0-B0-4
@@ -158,7 +158,7 @@ coils:
     c_smart_drop_target_reset:
         number: A0-B1-6
     c_smart_drop_target_trigger:
-        number: A1-B0-0
+        number: A2-B0-0
 
 autofire_coils:
     left_slingshot:

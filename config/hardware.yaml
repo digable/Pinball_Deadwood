@@ -95,6 +95,7 @@ switches:
 
     s_laser_kick_prox:
         number: A2-B0-0
+        type: NO
 
     s_smart_drop_target:
         number: A2-B0-2
@@ -189,10 +190,22 @@ ball_devices:
         entrance_count_delay: 300ms
         eject_timeouts: 1s
 
-    bd_laser_kick:
-        ball_switches: s_laser_kick_prox
-        eject_coil: c_laser_kick
+    # bd_laser_kick:
+    #     ball_switches: s_laser_kick_prox
+    #     eject_coil: c_laser_kick
 
+kickbacks:
+  kickback_test:
+    coil: c_laser_kick
+    switch: s_laser_kick_prox
+    enable_events: kickback_enable
+    disable_events: kickback_kickback_test_fired
+
+ball_saves:
+  kickback_save:
+    balls_to_save: 1
+    active_time: 5s
+    enable_events: kickback_kickback_test_fired
 
 playfields:
     playfield:

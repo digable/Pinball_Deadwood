@@ -198,7 +198,7 @@ kickbacks:
   kickback_test:
     coil: c_laser_kick
     switch: s_laser_kick_prox
-    enable_events: kickback_enable
+    enable_events: kickback_enable, ball_start
     disable_events: kickback_kickback_test_fired
 
 ball_saves:

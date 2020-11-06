@@ -5,13 +5,13 @@ mode:
   priority: 500
 
 event_player:
-  mode_smart_drop_target_started: trigger_drop
-  s_varitarget_6_active: lift_drop
+  mode_smart_drop_target_started: drop_smart_drop
+  s_varitarget_6_active: lift_smart_drop
 
 coil_player:
-  lift_drop:
+  lift_smart_drop:
     c_smart_drop_target_reset:
       pulse_ms: 40
-  trigger_drop:
+  drop_smart_drop:
     c_smart_drop_target_knockdown:
       pulse_ms: 1000

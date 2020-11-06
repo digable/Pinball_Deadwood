@@ -155,7 +155,7 @@ coils:
 
     c_laser_kick:
         number: A0-B1-7
-        default_pulse_ms: 5
+        default_pulse_ms: 20
 
     c_smart_drop_target_reset:
         number: A0-B1-6

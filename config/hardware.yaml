@@ -156,9 +156,10 @@ coils:
     c_laser_kick:
         number: A0-B1-7
         default_pulse_ms: 5
+
     c_smart_drop_target_reset:
         number: A0-B1-6
-    c_smart_drop_target_trigger:
+    c_smart_drop_target_knockdown:
         number: A2-B0-0
 
 autofire_coils:
@@ -230,6 +231,11 @@ drop_targets:
         switch: s_drop_target_middle
     game_room_door:
         switch: s_drop_target_right
+    
+    d_smart_drop_target:
+         switch: s_smart_drop_target
+         reset_coil: c_smart_drop_target_reset
+         knockdown_coil: c_smart_drop_target_knockdown
 
 drop_target_banks:
     game_room:

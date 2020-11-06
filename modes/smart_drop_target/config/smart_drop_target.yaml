@@ -1,12 +1,1 @@
 #config_version=5
-
-mode:
-  start_events: ball_starting
-  priority: 500
-
-event_player:
-  mode_smart_drop_target_started: reset_smart_drop_target
-  s_varitarget_6_active: c_smart_drop_target_reset
-
-reset_smart_drop_target:
-    coil: c_smart_drop_target_knockdown

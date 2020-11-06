@@ -7,7 +7,7 @@ hardware:
 
 config:
 - hardware.yaml
-- hardware_virtual.yaml #INFO: UNcomment for virtual
+# - hardware_virtual.yaml #INFO: UNcomment for virtual
 - assets.yaml
 - sounds.yaml
 - styles.yaml

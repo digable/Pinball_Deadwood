@@ -135,10 +135,10 @@ coils:
 
     c_left_slingshot:
         number: A0-B1-1
-        default_pulse_ms: 7
+        default_pulse_ms: 5
     c_right_slingshot:
         number: A0-B1-0
-        default_pulse_ms: 7
+        default_pulse_ms: 5
     c_drop_target_reset:
         number: A0-B1-4
         default_pulse_ms: 60
@@ -155,6 +155,7 @@ coils:
 
     c_laser_kick:
         number: A0-B1-7
+        default_pulse_ms: 5
     c_smart_drop_target_reset:
         number: A0-B1-6
     c_smart_drop_target_trigger:
@@ -198,13 +199,13 @@ kickbacks:
   kickback_test:
     coil: c_laser_kick
     switch: s_laser_kick_prox
-    enable_events: kickback_enable, ball_starting
+    enable_events: kickback_enable #, ball_starting
     disable_events: kickback_kickback_test_fired
 
 ball_saves:
   kickback_save:
     balls_to_save: 1
-    active_time: 5s
+    active_time: 10s
     enable_events: kickback_kickback_test_fired
 
 playfields:

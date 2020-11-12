@@ -65,6 +65,8 @@ keyboard:
         switch: s_laser_kick_prox
     g:
         switch: s_smart_drop_target
+    h:
+        switch: s_target_behind_drops
 
     l:
         switch: s_launch_button

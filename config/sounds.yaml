@@ -37,6 +37,7 @@ sounds:
         priority: 100
         about_to_finish_time: 2s
         events_when_about_to_finish: song_01_about_to_finish
+        mode_end_action: stop
     song_02:
         file: kirby.ogg
         volume: 1.0

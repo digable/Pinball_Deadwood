@@ -95,7 +95,7 @@ switches:
 
     s_laser_kick_prox:
         number: A2-B0-0
-        type: NO
+        type: NC
 
     s_smart_drop_target:
         number: A2-B0-2

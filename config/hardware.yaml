@@ -197,18 +197,18 @@ ball_devices:
     #     ball_switches: s_laser_kick_prox
     #     eject_coil: c_laser_kick
 
-kickbacks:
-  laser_kick_test:
-    coil: c_laser_kick
-    switch: s_laser_kick_prox
-    enable_events: kickback_enable, ball_starting
-    disable_events: kickback_laser_kick_test_fired
+#kickbacks:
+#  laser_kick_test:
+#    coil: c_laser_kick
+#    switch: s_laser_kick_prox
+#    enable_events: kickback_enable, ball_starting
+#    disable_events: kickback_laser_kick_test_fired
 
-ball_saves:
-  kickback_save:
-    balls_to_save: 1
-    active_time: 3s
-    enable_events: kickback_laser_kick_test_fired
+#ball_saves:
+#  kickback_save:
+#    balls_to_save: 1
+#    active_time: 3s
+#    enable_events: kickback_laser_kick_test_fired
 
 playfields:
     playfield:

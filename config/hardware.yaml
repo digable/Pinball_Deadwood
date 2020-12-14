@@ -184,7 +184,7 @@ ball_devices:
         #entrance_count_delay: 15ms
         tags: trough, home, drain
         jam_switch: s_trough_jam
-        eject_coil_jam_pulse: 5ms
+        eject_coil_jam_pulse: 15ms
         eject_targets: bd_plunger
         eject_timeouts: 3s
         # debug: yes

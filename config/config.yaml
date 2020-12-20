@@ -30,6 +30,7 @@ modes:
 - laser_kick
 - smart_drop_target
 - bonus
+- multiball
 
 #INFO: bootup mode
 slides:

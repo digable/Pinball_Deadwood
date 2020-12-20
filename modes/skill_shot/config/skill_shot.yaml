@@ -121,7 +121,7 @@ state_machines:
                 label: skill_shot ready
             success:
                 label: skill_shot success
-                events_when_started: skill_success, skill_shot_taken_true, mb4_start
+                events_when_started: skill_success, skill_shot_taken_true, start_multiball, mb4_start
             failed:
                 label: skill_shot fail
                 events_when_started: skill_failed, skill_shot_taken_true

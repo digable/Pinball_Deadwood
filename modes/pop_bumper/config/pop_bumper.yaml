@@ -1,0 +1,75 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  priority: 500
+
+sound_player:
+  s_pop_bumper_active:
+    sfx_gun_shot:
+      action: play
+      loops: 0
+
+counters:
+  pops_counter:
+    count_events: s_pop_bumper_active
+    reset_on_complete: True
+    disable_on_complete: False
+    starting_count: 0
+    count_complete_value: 1
+    direction: up
+    events_when_complete: increment_pops_counter, got_a_pop
+    persist_state: True
+
+variable_player:
+  increment_pops_counter:
+    pops_total: 1
+
+shots:
+  pop_shot:
+    switch: s_pop_bumper
+    show_tokens:
+      led: l_pop_bumper_rgb
+    profile: pop_shot_profile
+
+shot_profiles:
+  pop_shot_profile:
+    states:
+      # - name: unlit
+      #   show: off
+      - name: flashing
+        show: flash_color
+        show_tokens:
+          color: green
+        speed: 1
+      - name: flashing
+        show: flash_color
+        show_tokens:
+          color: green
+        speed: 2
+      - name: flashing
+        show: flash_color
+        show_tokens:
+          color: green
+        speed: 4
+      - name: flashing
+        show: flash_color
+        show_tokens:
+          color: green
+        speed: 8
+      - name: flashing
+        show: flash_color
+        show_tokens:
+          color: green
+        speed: 10
+      - name: flashing
+        show: flash_color
+        show_tokens:
+          color: green
+        speed: 12
+      - name: lit
+        show: on
+        show_tokens:
+          color: green
+    loop: yes
+    # rotation_pattern: L, L, L, L, R, R, R, R

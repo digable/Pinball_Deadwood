@@ -59,7 +59,14 @@ keyboard:
         switch: s_varitarget_7
 
     d:
-        switch: s_popbumper
+        switch: s_pop_bumper
+
+    f:
+        switch: s_laser_kick_prox
+    g:
+        switch: s_smart_drop_target
+    h:
+        switch: s_target_behind_drops
 
     l:
         switch: s_launch_button

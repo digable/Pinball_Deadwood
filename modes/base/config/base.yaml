@@ -4,7 +4,35 @@ mode:
   start_events: ball_starting
   priority: 100
 
+sound_player:
+    mode_base_started:
+        song_01:
+            action: play
+            loops: -1
+    mode_base_stopped:
+        song_01:
+            action: stop
+    s_target_jukebox_active:
+      sfx_coin:
+          action: play
+          loops: 0
+    s_left_slingshot_active:
+      sfx_punch_1:
+        action: play
+        loops: 0
+    s_right_slingshot_active:
+      sfx_punch_2:
+        action: play
+        loops: 0
+
 variable_player:
+#INFO: variables to reset for players after specific events
+  ball_drain:
+    skill_shot_taken:
+      int: 0
+      action: set
+
+#INFO: regular scoring stuff
   s_left_slingshot_active:
     score: 20
   s_right_slingshot_active:
@@ -15,7 +43,7 @@ variable_player:
   # s_right_flipper_active:
   #   score: -5
 
-# TODO: mode_skillshot_(ended or failed), need to change the scoring
+# TODO: mode_skill_shot_(ended or failed), need to change the scoring
   s_spinner_active:
     # spinner_rotations: 1
     score: 5
@@ -46,8 +74,10 @@ variable_player:
   s_varitarget_7_active:
     score: 40
 
-  s_popbumper_active:
+  s_pop_bumper_active:
     score: 25
+    # l_pop_bumper_rgb_on
+
 
 # event_player:
 #   flipper_cardle_active:

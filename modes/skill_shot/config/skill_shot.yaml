@@ -1,7 +1,10 @@
 #config_version=5
 
 mode:
-    start_events: s_plunger_lane_active
+    # start_events: s_plunger_lane_active
+    # start_events: ball_starting
+    start_events: plunger_lane_released{current_player.skill_shot_taken == 0}
+    # start_events: skill_shot_select_complete{current_player.skill_shot_taken == 0}
     stop_events:
         - skill_success
         - skill_failed
@@ -12,14 +15,15 @@ shots:
     skill_1:
         switch: s_target_jukebox
         profile: skill_shot_profile
-        advance_events: mode_skillshot_started
+        advance_events: mode_skill_shot_started
         show_tokens:
             light: l_jukebox_rgb
     # skill_2:
-    #     switch: s_target_jukebox
+    #     switch: s_pop_bumper
     #     profile: skill_shot_profile
-    #     # show_tokens:
-    #     #     light: l_lane_m
+    #     advance_events: mode_skill_shot_started
+    #     show_tokens:
+    #         light: l_pop_bumper_rgb
     # skill_3:
     #     switch: s_lane_r
     #     profile: skill_shot_profile
@@ -57,6 +61,14 @@ variable_player:
     skill_shot_timeout_variable:
       int: device.timers.skill_shot_timeout.ticks
       action: set
+  skill_shot_taken_true:
+    skill_shot_taken:
+      int: 1
+      action: set
+  # player_turn_started:
+  #   skill_shot_taken:
+  #     int: 0
+  #     action: set
 
 sound_player:
   skill_success:
@@ -82,7 +94,7 @@ slides:
     #   direction: right
     # transition_out:
     #   type: fade_away
-  show_timer_skillshot:
+  show_timer_skill_shot:
     widgets:
     - type: Text
       text: (player|skill_shot_timeout_variable)
@@ -93,7 +105,7 @@ slides:
 timers:
   skill_shot_timeout:
     start_value: 5
-    end_value: -1 #INFO: timeout of skillshot
+    end_value: -1 #INFO: timeout of skill_shot
     direction: down
     tick_interval: 1s
     start_running: false
@@ -106,13 +118,13 @@ state_machines:
         # debug: True
         states:
             start:
-                label: Skillshot ready
+                label: skill_shot ready
             success:
-                label: Skillshot success
-                events_when_started: skill_success
+                label: skill_shot success
+                events_when_started: skill_success, skill_shot_taken_true, mb4_enable, mb4_start
             failed:
-                label: Skillshot fail
-                events_when_started: skill_failed
+                label: skill_shot fail
+                events_when_started: skill_failed, skill_shot_taken_true
         transitions:
             - source: start
               target: success
@@ -120,3 +132,13 @@ state_machines:
             - source: start
               target: failed
               events: skill_shot_unlit_hit, timer_skill_shot_timeout_complete
+
+multiballs:
+    mb4:
+        ball_count: 1
+        ball_count_type: add
+        shoot_again: 30s
+        enable_events: mb4_enable
+        disable_events: mb4_disable
+        start_events: mb4_start
+        stop_events: mb4_stop

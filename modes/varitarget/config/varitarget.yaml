@@ -55,6 +55,17 @@ sound_player:
       action: play
       loops: 0
 
+slide_player:
+  varitarget_level_6_reached: got_a_belch_slide
+
+slides:
+  got_a_belch_slide:
+    widgets:
+      - type: video
+        video: vari_belch
+        end_behavior: loop
+    expire: 1s
+
   # varitarget_level_1_reached{current_player.varitarget_block_playing_shows==0}: stop_varitarget_shows, play_varitarget_show_1|10ms
   # varitarget_level_2_reached{current_player.varitarget_block_playing_shows==0}: stop_varitarget_shows, play_varitarget_show_2|10ms
   # varitarget_level_3_reached{current_player.varitarget_block_playing_shows==0}: stop_varitarget_shows, play_varitarget_show_3|10ms

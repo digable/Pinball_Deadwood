@@ -1,0 +1,70 @@
+#config_version=5
+
+mode:
+    # start_events: s_plunger_lane_active
+    # start_events: ball_starting
+    start_events: ball_starting #{current_player.skill_shot_taken == 0}
+    stop_events:
+        - skill_shot_select_complete
+    priority: 499
+
+# shots:
+#     skill_1:
+#         switch: s_target_jukebox
+#         profile: skill_shot_select_profile
+#         advance_events: mode_skill_shot_select_started
+#         show_tokens:
+#             light: l_jukebox_rgb
+#     skill_2:
+#         switch: s_pop_bumper
+#         profile: skill_shot_select_profile
+#         advance_events: mode_skill_shot_select_started
+#         show_tokens:
+#             light: l_pop_bumper_rgb
+#     # skill_3:
+#     #     switch: s_lane_r
+#     #     profile: skill_shot_profile
+#     #     # show_tokens:
+#     #     #     light: l_lane_r
+
+# shot_groups:
+#     skill_shot:
+#         shots: skill_1, skill_2 #, skill_3
+#         rotate_left_events: s_left_flipper_active
+#         rotate_right_events: s_right_flipper_active
+#         reset_events:
+#         - plunger_lane_released
+
+# shot_profiles:
+#     skill_shot_select_profile:
+#         states:
+#          - name: unlit
+#            show: off
+#          - name: flashing
+#            show: flash_color
+#            show_tokens:
+#              color: red
+#            speed: 4
+#          - name: lit
+#            show: on
+#         loop: yes
+
+# state_machines:
+#    skill_shot_select_success:
+#         # # debug: True
+#         states:
+#             start:
+#                 label: skill_shot_select ready
+#             success:
+#                 label: skill_shot success
+#                 events_when_started: skill_success, skill_shot_taken_true
+#             failed:
+#                 label: skill_shot fail
+#                 events_when_started: skill_failed, skill_shot_taken_true
+#         transitions:
+#             - source: start
+#               target: success
+#               events: skill_shot_flashing_hit
+#             - source: start
+#               target: failed
+#               events: skill_shot_unlit_hit, timer_skill_shot_timeout_complete

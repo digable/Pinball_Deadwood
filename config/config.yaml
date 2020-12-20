@@ -17,14 +17,20 @@ config:
 - keyboard.yaml
 
 modes:
+- attract
 - base
 - high_score
 - tilt
-- skillshot
-- game_room
+# - skill_shot_select
+- skill_shot
+- drop_targets
 - varitarget
-- spinning
+- spinner
+- pop_bumper
+- laser_kick
+- smart_drop_target
 - bonus
+- multiball
 
 #INFO: bootup mode
 slides:

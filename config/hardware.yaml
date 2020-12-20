@@ -34,7 +34,8 @@ switches:
         tags: right_flipper
 
     s_trough1:
-        number: A0-B0-1
+        number: A0-B0-0
+        type: 'NC'
     s_trough2:
         number: A0-B0-4
     s_trough3:
@@ -42,11 +43,13 @@ switches:
     s_trough4:
         number: A0-B0-2
     s_trough_jam:
-        number: A0-B0-0
+        number: A0-B0-1
+        type: 'NC'
 
 #INFO: switch to detect the ball resting in the lane
     s_plunger_lane:
         number: A0-B0-5
+        tags: plunger_lane
 
     s_start:
         number: A0-B1-1
@@ -89,23 +92,40 @@ switches:
     s_varitarget_7:
         number: A1-B0-7
 
-    s_popbumper:
+    s_pop_bumper:
         number: A0-B1-5
+
+    s_laser_kick_prox:
+        number: A2-B0-0
+        type: NC
+
+    s_smart_drop_target:
+        number: A2-B0-2
 
     s_tilt:
         number: A0-B1-3
         tags: tilt_warning
 
+    s_target_behind_drops:
+        number: A2-B0-3
+        
+timed_switches:
+    plunger_lane_check:
+        switch_tags: plunger_lane
+        time: 250ms
+        events_when_active: plunger_lane_checked
+        events_when_released: plunger_lane_released
+
 coils:    
     c_flipper_left_main:
         number: A0-B1-2
-        default_pulse_ms: 25
+        default_pulse_ms: 23
     c_flipper_left_hold:
         number: A0-B1-3
         allow_enable: true
     c_flipper_right_main:
         number: A0-B0-1
-        default_pulse_ms: 25
+        default_pulse_ms: 23
     c_flipper_right_hold:
         number: A0-B0-2
         allow_enable: true
@@ -120,24 +140,32 @@ coils:
 
     c_left_slingshot:
         number: A0-B1-1
-        default_pulse_ms: 7
+        default_pulse_ms: 5
     c_right_slingshot:
         number: A0-B1-0
-        default_pulse_ms: 7
+        default_pulse_ms: 5
     c_drop_target_reset:
         number: A0-B1-4
         default_pulse_ms: 60
     c_varitarget_reset:
         number: A0-B1-5
         default_pulse_ms: 30
-    c_dummy_1:
-        number: A2-B0-0
-    c_dummy_2:
-        number: A2-B1-0
 
-    c_popbumper:
+    c_dummy_2:
+        number: A2-B0-0
+
+    c_pop_bumper:
         number: A0-B0-4
         default_pulse_ms: 25
+
+    c_laser_kick:
+        number: A0-B1-7
+        default_pulse_ms: 20
+
+    c_smart_drop_target_reset:
+        number: A0-B1-6
+    c_smart_drop_target_knockdown:
+        number: A2-B1-0
 
 autofire_coils:
     left_slingshot:
@@ -146,28 +174,46 @@ autofire_coils:
     right_slingshot:
         coil: c_right_slingshot
         switch: s_right_slingshot
-    ac_popbumper:
-        coil: c_popbumper
-        switch: s_popbumper
+    ac_pop_bumper:
+        coil: c_pop_bumper
+        switch: s_pop_bumper
 
 ball_devices:
     bd_trough:
-        ball_switches: s_trough1, s_trough2, s_trough3, s_trough4
+        ball_switches: s_trough1, s_trough2, s_trough3, s_trough4, s_trough_jam
         eject_coil: c_trough_eject
+        entrance_count_delay: 300ms
         tags: trough, home, drain
         jam_switch: s_trough_jam
-        eject_coil_jam_pulse: 5ms
-        entrance_count_delay: 300ms
-        eject_timeouts: 1s
+        eject_coil_jam_pulse: 15ms
         eject_targets: bd_plunger
+        eject_timeouts: 3s
         # debug: yes
 
     bd_plunger:
         ball_switches: s_plunger_lane
+        # entrance_count_delay: 300ms
         eject_coil: c_plunger
         mechanical_eject: true
         entrance_count_delay: 300ms
-        eject_timeouts: 1s
+        eject_timeouts: 5s
+
+    bd_laser_kick:
+        ball_switches: s_laser_kick_prox
+        eject_coil: c_laser_kick
+
+kickbacks:
+  laser_kick_test:
+    coil: c_laser_kick
+    switch: s_laser_kick_prox
+    enable_events: kickback_enable, ball_starting
+    disable_events: kickback_laser_kick_test_fired
+
+ball_saves:
+  kickback_save:
+    balls_to_save: 1
+    active_time: 3s
+    enable_events: kickback_laser_kick_test_fired
 
 playfields:
     playfield:
@@ -191,6 +237,11 @@ drop_targets:
         switch: s_drop_target_middle
     game_room_door:
         switch: s_drop_target_right
+    
+    d_smart_drop_target:
+         switch: s_smart_drop_target
+         reset_coil: c_smart_drop_target_reset
+         knockdown_coil: c_smart_drop_target_knockdown
 
 drop_target_banks:
     game_room:
@@ -209,10 +260,27 @@ lights:
         number: 1-0-1-2
         platform_settings:
             polarity: True
-    l_popbumper_rgb:
+        default_on_color: red
+    l_pop_bumper_rgb:
         number: 1-24-25-26
         platform_settings:
             polarity: True
+        default_on_color: white
+    l_left_sling_rgb:
+        number: 1-3-4-5
+        platform_settings:
+            polarity: True
+        default_on_color: white
+    l_right_sling_rgb:
+        number: 1-6-7-8
+        platform_settings:
+            polarity: True
+        default_on_color: white
+    l_varitarget_rgb:
+        number: 1-9-10-11
+        platform_settings:
+            polarity: True
+        default_on_color: white
 
 light_settings:
    default_fade_ms: 40

@@ -196,7 +196,7 @@ ball_devices:
         eject_coil: c_plunger
         mechanical_eject: true
         entrance_count_delay: 300ms
-        eject_timeouts: 5s
+        eject_timeouts: 2s
 
     bd_laser_kick:
         ball_switches: s_laser_kick_prox
@@ -278,6 +278,11 @@ lights:
         default_on_color: white
     l_varitarget_rgb:
         number: 1-9-10-11
+        platform_settings:
+            polarity: True
+        default_on_color: white
+    l_ball_save_rgb:
+        number: 1-27-28-29
         platform_settings:
             polarity: True
         default_on_color: white

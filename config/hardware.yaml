@@ -218,6 +218,10 @@ ball_saves:
 playfields:
     playfield:
         tags: default
+        enable_ball_search: True
+        ball_search_timeout: 20s
+        ball_search_wait_after_iteration: 10s
+        ball_search_interval: 250ms
         default_source_device: bd_plunger
 
 flippers:

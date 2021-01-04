@@ -26,7 +26,7 @@ event_player:
 timed_switches:
     varitarget_register:
       switches: s_varitarget_1, s_varitarget_2, s_varitarget_3, s_varitarget_4, s_varitarget_5, s_varitarget_6
-      time: 1s
+      time: 250ms
       events_when_active: reset_varitarget
 
 sound_player:

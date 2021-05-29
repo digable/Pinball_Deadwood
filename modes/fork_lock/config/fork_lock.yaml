@@ -1,9 +1,9 @@
 #config_version=5
 mode:
-  start_events: s_fork_lock_active
+  start_events: ball_starting
   stop_events:
-      - stop_fork_lock
-      - start_fork_target
+      #- stop_fork_lock
+      #- start_fork_target
 
 multiball_locks:
   fork:
@@ -13,10 +13,19 @@ multiball_locks:
 event_player:
   # mode_fork_target_started: drop_fork
   s_fork_up_down_active:
-      - drop_fork
-      - stop_fork_lock
+      #- start_fork_lock
+      - lift_fork
+      - start_fork_target
+      # then stop event, add code to handle up_down switch target when multiball active. example: 3 hits releases ball... 
+
+  s_fork_lock_active:
+      #- drop_fork
+      #- stop_fork_lock
 
 coil_player:
+  lift_fork:
+    c_fork_up:
+      pulse_ms: 200
   drop_fork:
     c_fork_eject:
       pulse_ms: 40

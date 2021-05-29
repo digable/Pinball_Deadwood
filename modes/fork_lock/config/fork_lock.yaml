@@ -17,7 +17,7 @@ event_player:
 coil_player:
   lift_fork:
     c_fork_up:
-      pulse_ms: 60
+      pulse_ms: 140
   drop_fork:
     c_fork_eject:
       pulse_ms: 40

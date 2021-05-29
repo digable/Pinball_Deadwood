@@ -1,8 +1,9 @@
 #config_version=5
 mode:
   start_events:
-      - #ball_starting
       - start_fork_target
+      - #ball_starting
+      
   stop_events:
       - stop_fork_target
       - #start_fork_lock

@@ -32,6 +32,7 @@ modes:
 - bonus
 - multiball
 - fork_lock
+- fork_target
 
 #INFO: bootup mode
 slides:

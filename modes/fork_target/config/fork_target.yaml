@@ -2,12 +2,13 @@
 mode:
   start_events:
       - start_fork_target
-      - #ball_starting
+      #- ball_starting
       
   stop_events:
       - stop_fork_target
-      - #start_fork_lock
-      - #stop_fork_target
+      - start_fork_lock
+      #- start_fork_lock
+      #- stop_fork_target
 
 event_player:
   # mode_fork_target_started: drop_fork

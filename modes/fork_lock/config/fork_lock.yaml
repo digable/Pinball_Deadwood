@@ -1,8 +1,10 @@
 #config_version=5
 mode:
-  start_events: ball_starting
+  start_events:
+      - ball_starting
+      - start_fork_lock
   stop_events:
-      #- stop_fork_lock
+      - stop_fork_lock
       #- start_fork_target
 
 multiball_locks:

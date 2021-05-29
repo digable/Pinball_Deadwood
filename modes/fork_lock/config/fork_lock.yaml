@@ -1,7 +1,9 @@
 #config_version=5
 mode:
-  start_events: start_fork_lock
-  stop_events: stop_fork_lock
+  start_events: s_fork_lock_active
+  stop_events:
+      - stop_fork_lock
+      - start_fork_target
 
 multiball_locks:
   fork:
@@ -15,9 +17,6 @@ event_player:
       - stop_fork_lock
 
 coil_player:
-  lift_fork:
-    c_fork_up:
-      pulse_ms: 140
   drop_fork:
     c_fork_eject:
       pulse_ms: 40

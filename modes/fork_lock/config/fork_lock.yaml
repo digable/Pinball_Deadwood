@@ -28,7 +28,7 @@ mode:
 coil_player:
   lift_fork:
     c_fork_up:
-      pulse_ms: 240
+      pulse_ms: 80
   drop_fork:
     c_fork_eject:
       pulse_ms: 40

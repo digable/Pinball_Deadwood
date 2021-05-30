@@ -8,14 +8,15 @@ mode:
 
 multiball_locks:
   fork:
-    balls_to_lock: 2
+    balls_to_lock: 3
     balls_to_replace: 1
     lock_devices: bd_fork_lock
 
 event_player:
   # mode_fork_target_started: drop_fork
-  s_fork_up_down_active:
-      - lift_fork
+  #multiball_lock_fork_full: mb3_enable, mb3_start 
+  #s_fork_up_down_active:
+      #- lift_fork
       #- start_fork_target
       #- start_fork_lock
       # then stop event, add code to handle up_down switch target when multiball active. example: 3 hits releases ball... 
@@ -32,4 +33,13 @@ coil_player:
     c_fork_eject:
       pulse_ms: 40
 
+multiballs:
+    mb3:
+        ball_count: 2
+        #ball_count_type: add
+        shoot_again: 10s
+        enable_events: mb3_enable
+        disable_events: mb3_disable
+        start_events: mb3_start
+        stop_events: mb3_stop
 #INFO: add code to handle up_down switch target when multiball active. example: 3 hits releases ball... 

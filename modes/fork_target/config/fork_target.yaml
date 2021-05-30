@@ -1,8 +1,8 @@
 #config_version=5
 mode:
   start_events:
-      #- start_fork_target
       - ball_starting
+      #- start_fork_target
       
   #stop_events:
       #- stop_fork_target
@@ -22,7 +22,7 @@ event_player:
 coil_player:
   lift_fork:
     c_fork_up:
-      pulse_ms: 80
+      pulse_ms: 100
   drop_fork:
     c_fork_eject:
-      pulse_ms: 40
+      pulse_ms: 60

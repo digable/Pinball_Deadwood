@@ -20,7 +20,7 @@ event_player:
       #- start_fork_lock
       # then stop event, add code to handle up_down switch target when multiball active. example: 3 hits releases ball... 
 
-  s_fork_lock_active:
+  #s_fork_lock_active:
       #- drop_fork
       #- stop_fork_lock
 

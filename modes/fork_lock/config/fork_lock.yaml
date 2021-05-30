@@ -9,8 +9,8 @@ mode:
 
 multiball_locks:
   fork:
-    balls_to_lock: 1
-    #balls_to_replace: 1
+    balls_to_lock: 2
+    balls_to_replace: 1
     lock_devices: bd_fork_lock
 
 event_player:

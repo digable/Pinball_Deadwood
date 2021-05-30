@@ -6,13 +6,13 @@ mode:
       #- stop_fork_lock
       #- start_fork_target
 
-multiball_locks:
-  fork:
-    balls_to_lock: 3
-    balls_to_replace: 1
-    lock_devices: bd_fork_lock
+#multiball_locks:
+  #fork:
+    #balls_to_lock: 3
+    #balls_to_replace: 1
+    #lock_devices: bd_fork_lock
 
-event_player:
+#event_player:
   # mode_fork_target_started: drop_fork
   #multiball_lock_fork_full: mb3_enable, mb3_start 
   #s_fork_up_down_active:

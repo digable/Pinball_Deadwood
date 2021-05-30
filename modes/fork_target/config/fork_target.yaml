@@ -25,4 +25,4 @@ coil_player:
       pulse_ms: 100
   drop_fork:
     c_fork_eject:
-      pulse_ms: 60
+      pulse_ms: 40

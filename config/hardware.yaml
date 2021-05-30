@@ -180,7 +180,7 @@ coils:
         default_pulse_ms: 140
     c_fork_eject:
         number: A0-B0-6
-        default_pulse_ms: 20
+        default_pulse_ms: 40
 
 autofire_coils:
     left_slingshot:
@@ -217,9 +217,9 @@ ball_devices:
         ball_switches: s_laser_kick_prox
         eject_coil: c_laser_kick
 
-    bd_fork_lock:
-        eject_coil: c_fork_eject
-        ball_switches: s_fork_lock
+    #bd_fork_lock:
+        #eject_coil: c_fork_eject
+        #ball_switches: s_fork_lock
 
 kickbacks:
   laser_kick_test:

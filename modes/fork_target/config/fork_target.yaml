@@ -11,7 +11,7 @@ mode:
       #- stop_fork_target
 
 event_player:
-  #mode_fork_target_started: drop_fork
+  mode_fork_target_started: drop_fork
   s_fork_up_down_active:
       #- start_fork_lock
       #- stop_fork_target

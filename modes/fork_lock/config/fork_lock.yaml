@@ -3,7 +3,7 @@ mode:
   start_events:
       - ball_starting
       #- start_fork_lock
-  stop_events:
+  #stop_events:
       #- stop_fork_lock
       #- start_fork_target
 

@@ -11,11 +11,11 @@ mode:
       #- stop_fork_target
 
 event_player:
-  mode_fork_target_started: drop_fork
+  mode_fork_target_started: lift_fork 
   s_fork_up_down_active:
       #- start_fork_lock
       #- stop_fork_target
-      - lift_fork
+      #- lift_fork
       #- stop_fork_target
       # then stop event, add code to handle up_down switch target when multiball active. example: 3 hits releases ball... 
 

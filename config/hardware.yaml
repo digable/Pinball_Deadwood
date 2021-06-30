@@ -217,9 +217,9 @@ ball_devices:
         ball_switches: s_laser_kick_prox
         eject_coil: c_laser_kick
 
-    #bd_fork_lock:
-        #eject_coil: c_fork_eject
-        #ball_switches: s_fork_lock
+    bd_fork_lock:
+        eject_coil: c_fork_eject
+        ball_switches: s_fork_lock
 
 kickbacks:
   laser_kick_test:

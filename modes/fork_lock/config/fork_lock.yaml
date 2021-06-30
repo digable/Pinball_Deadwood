@@ -1,24 +1,24 @@
 #config_version=5
 mode:
-  #start_events: ball_starting
-      #- start_fork_lock
-  #stop_events:
-      #- stop_fork_lock
+  start_events:
+      - start_fork_lock
+  stop_events:
+      - stop_fork_lock
       #- start_fork_target
 
 #multiball_locks:
-  #fork:
-    #balls_to_lock: 3
-    #balls_to_replace: 1
-    #lock_devices: bd_fork_lock
+  fork:
+    balls_to_lock: 1
+    balls_to_replace: 1
+    lock_devices: bd_fork_lock
 
 #event_player:
   # mode_fork_target_started: drop_fork
   #multiball_lock_fork_full: mb3_enable, mb3_start 
-  #s_fork_up_down_active:
-      #- lift_fork
-      #- start_fork_target
-      #- start_fork_lock
+  s_fork_up_down_active:
+      - drop_fork
+      - start_fork_target
+      - stop_fork_lock
       # then stop event, add code to handle up_down switch target when multiball active. example: 3 hits releases ball... 
 
   #s_fork_lock_active:

@@ -1,45 +1,33 @@
 #config_version=5
 
 hardware:
-    platform: p3_roc #INFO: comment for virtual
-    driverboards: pdb #INFO: comment for virtual
-    # platform: smart_virtual #INFO: UNcomment for virtual
+  platform: p3_roc
+#    platform: smart_virtual #mpf both -X to run virtual platform now
+
+p_roc:
+  driverboards: pdb
+  use_watchdog: true
+  watchdog_time: 1s
 
 config:
-- hardware.yaml
-# - hardware_virtual.yaml #INFO: UNcomment for virtual
-- assets.yaml
-- sounds.yaml
-- styles.yaml
-- shots.yaml
-- timers.yaml
-- variables
-- keyboard.yaml
+  - hardware.yaml
+  - keyboard.yaml
 
 modes:
-- attract
-- base
-- high_score
-- tilt
-# - skill_shot_select
-- skill_shot
-- drop_targets
-- varitarget
-- spinner
-- pop_bumper
-- laser_kick
-- smart_drop_target
-- bonus
-- multiball
+  - base
+  - high_score
+  - attract
 
-#INFO: bootup mode
 slides:
-    welcome_slide:
-        widgets:
-              - type: image
-                image: ZukiDogLogo
+  welcome_slide:
+    widgets:
+      - type: text
+        text: PINBALL!
+        font_size: 50
+        color: red
+      - type: rectangle
+        width: 240
+        height: 60
+
 slide_player:
-    init_done: welcome_slide
-#     mode_attract_started:
-#         welcome_slide:
-#             action: remove
+  init_done: welcome_slide
